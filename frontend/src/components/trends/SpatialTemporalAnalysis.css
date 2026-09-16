@@ -1,0 +1,225 @@
+.mg-spatial-temporal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.mg-sp-card {
+  background-color: var(--color-surface-container);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.mg-sp-card--highlight {
+  border-color: rgba(234, 179, 8, 0.4);
+  background-color: rgba(234, 179, 8, 0.03);
+}
+
+.mg-sp-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-3);
+}
+
+.mg-sp-card__title-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.mg-sp-card__title {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.mg-sp-badge {
+  font-size: 10px;
+  color: var(--color-text-tertiary);
+  background-color: var(--color-surface-container-highest);
+  padding: 2px 6px;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--color-border);
+}
+
+.mg-sp-badge--warning {
+  background-color: var(--color-warning-muted);
+  color: var(--color-warning);
+  border-color: var(--color-warning-border);
+}
+
+.mg-sp-text {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  margin: 0 0 var(--space-3) 0;
+}
+
+.mg-sp-cluster-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.cluster-stat {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+}
+
+.cluster-stat .label {
+  color: var(--color-text-tertiary);
+}
+
+.cluster-stat .val {
+  font-weight: var(--font-weight-medium);
+}
+
+.mg-sp-footer-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+  margin-top: auto;
+}
+
+.mg-sp-footer-note .bullet {
+  color: var(--color-warning);
+  font-size: 10px;
+}
+
+/* Zone Table */
+.mg-zone-table-wrapper {
+  overflow-x: auto;
+  margin-top: auto;
+}
+
+.mg-zone-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+}
+
+.mg-zone-table th {
+  padding: 6px 6px;
+  text-align: left;
+  background-color: var(--color-surface-container-high);
+  color: var(--color-text-tertiary);
+  font-weight: var(--font-weight-semibold);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.mg-zone-table td {
+  padding: 6px 6px;
+  border-bottom: 1px solid var(--color-border-subtle);
+  color: var(--color-text-secondary);
+}
+
+.zone-status-pill {
+  font-size: 9px;
+  font-weight: var(--font-weight-semibold);
+  padding: 1px 5px;
+  border-radius: 2px;
+}
+
+.status-high {
+  background-color: var(--color-critical-muted);
+  color: var(--color-critical);
+}
+
+.status-elevated {
+  background-color: var(--color-warning-muted);
+  color: var(--color-warning);
+}
+
+.status-normal {
+  background-color: var(--color-normal-muted);
+  color: var(--color-normal);
+}
+
+/* Quality Grid */
+.mg-quality-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.mg-quality-metric {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-xs);
+  padding: var(--space-2);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mg-quality-metric .label {
+  font-size: 9px;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+}
+
+.mg-quality-metric .val {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+}
+
+.mg-probes-health-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: auto;
+}
+
+.probes-label {
+  font-size: 10px;
+  color: var(--color-text-tertiary);
+}
+
+.probes-label strong {
+  color: var(--color-normal);
+}
+
+.probes-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.probe-chip {
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: var(--radius-xs);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-subtle);
+}
+
+.chip-healthy {
+  color: var(--color-normal);
+}
+
+@media (max-width: 1024px) {
+  .mg-spatial-temporal-grid {
+    grid-template-columns: 1fr;
+  }
+}

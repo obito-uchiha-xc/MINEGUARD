@@ -1,0 +1,111 @@
+.mg-alerts-page-layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding-bottom: var(--space-8);
+}
+
+/* HEADER ACTIONS */
+.mg-alerts-header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.mg-live-telemetry-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+.mg-live-telemetry-badge .live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--color-risk-low);
+  box-shadow: 0 0 8px var(--color-risk-low);
+  animation: pulse-live 1.8s infinite;
+}
+
+@keyframes pulse-live {
+  0% { opacity: 0.5; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.2); }
+  100% { opacity: 0.5; transform: scale(0.9); }
+}
+
+.mg-live-telemetry-badge .live-text {
+  font-size: var(--font-size-2xs);
+  color: var(--color-risk-low);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* FEED HEADER & CONTROLS */
+.mg-alerts-feed-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  padding: 0 var(--space-1);
+}
+
+.feed-info {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+
+.feed-title {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.feed-badge {
+  font-size: var(--font-size-xs);
+  background-color: var(--color-bg-surface-elevated);
+  border: 1px solid var(--color-border-subtle);
+  color: var(--color-text-secondary);
+  padding: 1px 8px;
+  border-radius: var(--radius-full);
+}
+
+.feed-sub {
+  font-size: var(--font-size-xs);
+  color: var(--color-risk-high);
+}
+
+.feed-bulk-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* FEED LIST */
+.mg-alerts-feed-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* EMPTY CONTAINER */
+.mg-alerts-empty-container {
+  padding: var(--space-8) var(--space-4);
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

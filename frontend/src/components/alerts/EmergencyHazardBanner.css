@@ -1,0 +1,396 @@
+/* EmergencyHazardBanner.css */
+
+.mg-hazard-banner {
+  position: relative;
+  z-index: 75;
+  width: 100%;
+  background: radial-gradient(ellipse 75% 100% at 20% 50%, rgba(220, 38, 38, 0.14) 0%, rgba(20, 11, 13, 0.98) 100%);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(239, 68, 68, 0.45);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+/* Hazard Warning Continuous Precision Micro-Grided Line */
+.mg-hazard-banner__stripe {
+  height: 3.5px;
+  width: 100%;
+  background: linear-gradient(
+    -45deg,
+    #ef4444 25%,
+    #991b1b 25%,
+    #991b1b 50%,
+    #ef4444 50%,
+    #ef4444 75%,
+    #991b1b 75%,
+    #991b1b
+  );
+  background-size: 16px 16px;
+  border-bottom: 1px solid rgba(239, 68, 68, 0.85);
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.75);
+  animation: mgContinuousGridScroll 1.2s linear infinite;
+}
+
+@keyframes mgContinuousGridScroll {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 16px 0;
+  }
+}
+
+.mg-hazard-banner--sounding {
+  background: radial-gradient(ellipse 80% 120% at 25% 50%, rgba(220, 38, 38, 0.22) 0%, rgba(26, 8, 10, 0.98) 100%);
+  box-shadow: 0 6px 32px rgba(239, 68, 68, 0.35), inset 0 0 20px rgba(239, 68, 68, 0.12);
+  animation: mgBannerGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes mgBannerGlow {
+  0% {
+    border-bottom-color: rgba(239, 68, 68, 0.4);
+  }
+  100% {
+    border-bottom-color: rgba(255, 128, 128, 0.75);
+  }
+}
+
+.mg-hazard-banner--silenced {
+  background: radial-gradient(ellipse 75% 100% at 20% 50%, rgba(217, 119, 6, 0.12) 0%, rgba(22, 18, 12, 0.98) 100%);
+  border-bottom: 1px solid rgba(245, 158, 11, 0.45);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.mg-hazard-banner--silenced .mg-hazard-banner__stripe {
+  background: linear-gradient(
+    -45deg,
+    #f59e0b 25%,
+    #78350f 25%,
+    #78350f 50%,
+    #f59e0b 50%,
+    #f59e0b 75%,
+    #78350f 75%,
+    #78350f
+  );
+  background-size: 16px 16px;
+  border-bottom: 1px solid rgba(245, 158, 11, 0.85);
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.65);
+}
+
+.mg-hazard-banner__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: 8px var(--space-6);
+  max-width: 100%;
+}
+
+/* DETAILS */
+.mg-hazard-banner__details {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  flex: 1;
+}
+
+.mg-hazard-banner__icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mg-hazard-banner__beacon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(239, 68, 68, 0.35) 0%, rgba(239, 68, 68, 0.1) 100%);
+  border: 1px solid rgba(239, 68, 68, 0.5);
+  color: #ef4444;
+}
+
+.mg-hazard-banner__beacon-icon {
+  animation: mgBeaconSpin 2.4s ease infinite;
+  z-index: 2;
+}
+
+.mg-hazard-banner__pulse-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1.5px solid #ef4444;
+  animation: mgPulseRing 1.3s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+@keyframes mgPulseRing {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+.mg-hazard-banner__silence-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(245, 158, 11, 0.18);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  color: #f59e0b;
+}
+
+.mg-hazard-banner__alert-icon {
+  color: #ef4444;
+  filter: drop-shadow(0 0 6px rgba(239, 68, 68, 0.6));
+}
+
+.mg-hazard-banner__text {
+  min-width: 0;
+}
+
+.mg-hazard-banner__header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 2px;
+}
+
+.mg-hazard-banner__badge {
+  display: inline-block;
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.mg-hazard-banner__badge--critical {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.4);
+}
+
+.mg-hazard-banner__badge--high {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: #1c1917;
+  font-weight: 800;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.mg-hazard-banner__title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.mg-hazard-banner__silenced-time {
+  font-size: 11px;
+  color: #f59e0b;
+  font-weight: 500;
+}
+
+.mg-hazard-banner__desc {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  color: rgba(228, 228, 231, 0.82);
+  margin: 0;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mg-hazard-banner__node-tag {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.mg-hazard-banner__zone-tag {
+  color: rgba(212, 212, 216, 0.75);
+}
+
+.mg-hazard-banner__dot {
+  color: rgba(239, 68, 68, 0.5);
+  font-size: 9px;
+}
+
+.mg-hazard-banner__metrics-tag {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  color: #fca5a5;
+  background: rgba(239, 68, 68, 0.08);
+  padding: 1px 6px;
+  border-radius: 4px;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+/* ACTIONS */
+.mg-hazard-banner__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.mg-hazard-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+/* SHUT ALARM SOUND BUTTON - PROMINENT PRIMARY CALL-TO-ACTION */
+.mg-hazard-btn--shut {
+  background: #dc2626;
+  border-color: #ef4444;
+  color: #ffffff;
+  box-shadow: 0 0 16px rgba(220, 38, 38, 0.7);
+  animation: mgButtonPulse 1s ease-in-out infinite alternate;
+}
+
+.mg-hazard-btn--shut:hover {
+  background: #b91c1c;
+  border-color: #fca5a5;
+  transform: scale(1.02);
+  box-shadow: 0 0 24px rgba(239, 68, 68, 0.9);
+}
+
+.mg-hazard-btn--shut:active {
+  transform: scale(0.97);
+}
+
+.mg-hazard-btn__shut-label {
+  letter-spacing: 0.04em;
+}
+
+.mg-hazard-btn__shortcut {
+  display: inline-block;
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.35);
+  font-size: 10px;
+  font-family: var(--font-mono, monospace);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+@keyframes mgButtonPulse {
+  0% {
+    box-shadow: 0 0 10px rgba(220, 38, 38, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 22px rgba(239, 68, 68, 0.9);
+  }
+}
+
+/* UNLOCK BUTTON */
+.mg-hazard-btn--unlock {
+  background: rgba(245, 158, 11, 0.2);
+  border-color: #f59e0b;
+  color: #fcd34d;
+  animation: mgButtonPulse 1.2s ease-in-out infinite alternate;
+}
+
+.mg-hazard-btn--unlock:hover {
+  background: rgba(245, 158, 11, 0.35);
+  color: #ffffff;
+}
+
+/* RE-ARM BUTTON */
+.mg-hazard-btn--rearm {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #fcd34d;
+}
+
+.mg-hazard-btn--rearm:hover {
+  background: rgba(245, 158, 11, 0.15);
+  border-color: #f59e0b;
+  color: #ffffff;
+}
+
+/* INSPECT BUTTON */
+.mg-hazard-btn--inspect {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.16);
+  color: #e4e4e7;
+  font-size: 11.5px;
+  font-weight: 600;
+  backdrop-filter: blur(8px);
+}
+
+.mg-hazard-btn--inspect:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.32);
+  color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+  transform: translateY(-1px);
+}
+
+.mg-hazard-banner__dismiss {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--color-text-muted, #a1a1aa);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.mg-hazard-banner__dismiss:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+/* MOBILE ADAPTATIONS */
+@media (max-width: 900px) {
+  .mg-hazard-banner__content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+    padding: 8px var(--space-3);
+  }
+
+  .mg-hazard-banner__desc {
+    white-space: normal;
+  }
+
+  .mg-hazard-banner__actions {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}

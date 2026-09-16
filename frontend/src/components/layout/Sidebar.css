@@ -1,0 +1,205 @@
+.mg-sidebar {
+  width: 260px;
+  background-color: var(--color-bg-alt);
+  border-right: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  z-index: 90;
+  transition: width var(--transition-base), transform var(--transition-base);
+  user-select: none;
+  flex-shrink: 0;
+}
+
+/* COLLAPSED DESKTOP */
+.mg-sidebar.is-collapsed {
+  width: 76px;
+}
+
+/* BRANDING HEADER */
+.mg-sidebar__header {
+  height: 64px;
+  padding: 0 var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-border-subtle);
+  flex-shrink: 0;
+}
+
+.mg-sidebar__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-width: 0;
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+}
+
+.mg-sidebar__brand:hover,
+.mg-sidebar__brand:focus,
+.mg-sidebar__brand:active,
+.mg-sidebar__brand:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+.mg-sidebar__logo-box {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, rgba(229, 169, 60, 0.16) 0%, rgba(229, 169, 60, 0.04) 100%);
+  border: 1px solid rgba(229, 169, 60, 0.35);
+  box-shadow: 0 0 12px rgba(229, 169, 60, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mg-sidebar__logo-icon {
+  color: #e5a93c;
+  filter: drop-shadow(0 0 6px rgba(229, 169, 60, 0.5));
+}
+
+.mg-sidebar__title-block {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.mg-sidebar__title-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mg-sidebar__app-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+}
+
+.mg-sidebar__sys-tag {
+  font-size: 9px;
+  font-weight: 700;
+  padding: 1px 4px;
+  background-color: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  color: var(--color-text-muted);
+  letter-spacing: 0.06em;
+}
+
+.mg-sidebar__app-sub {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mg-sidebar__mobile-close {
+  display: none;
+}
+
+/* NAVIGATION LIST */
+.mg-sidebar__nav {
+  flex: 1;
+  padding: var(--space-4) var(--space-3);
+  overflow-y: auto;
+}
+
+.mg-sidebar__nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mg-sidebar__nav-item {
+  width: 100%;
+}
+
+/* FOOTER */
+.mg-sidebar__footer {
+  padding: var(--space-3);
+  border-top: 1px solid var(--color-border-subtle);
+  background-color: rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+}
+
+.mg-sidebar__link-status {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 8px 10px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+}
+
+.mg-sidebar__link-status.is-collapsed {
+  justify-content: center;
+  padding: 8px 0;
+}
+
+.mg-sidebar__link-icon {
+  color: var(--color-normal);
+  flex-shrink: 0;
+}
+
+.mg-sidebar__link-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.mg-sidebar__link-title {
+  font-size: var(--text-metadata);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+}
+
+.mg-sidebar__link-sub {
+  font-size: 10px;
+  color: var(--color-text-muted);
+  line-height: 1.2;
+}
+
+/* MOBILE OVERLAY DRAWER */
+.mg-sidebar-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(7, 13, 20, 0.75);
+  backdrop-filter: blur(4px);
+  z-index: 150;
+}
+
+@media (max-width: 768px) {
+  .mg-sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 270px !important;
+    z-index: 200;
+    transform: translateX(-100%);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .mg-sidebar.is-mobile-open {
+    transform: translateX(0);
+  }
+
+  .mg-sidebar__mobile-close {
+    display: block;
+  }
+}

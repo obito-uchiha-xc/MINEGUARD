@@ -1,0 +1,70 @@
+.mg-select-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.mg-select-label {
+  font-size: var(--text-metadata);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.01em;
+}
+
+.mg-select-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.mg-select-wrapper:focus-within {
+  border-color: var(--color-border-focus);
+  box-shadow: 0 0 0 2px var(--color-info-muted);
+}
+
+.mg-select {
+  width: 100%;
+  height: 38px;
+  padding: 0 36px 0 var(--space-3);
+  background: transparent;
+  border: none;
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.mg-select-option {
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+}
+
+.mg-select__chevron {
+  position: absolute;
+  right: var(--space-3);
+  color: var(--color-text-muted);
+  pointer-events: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ERROR STATE */
+.mg-select-group.has-error .mg-select-wrapper {
+  border-color: var(--color-critical);
+}
+
+.mg-select-message {
+  font-size: var(--text-metadata);
+  color: var(--color-text-muted);
+}
+
+.mg-select-message--error {
+  color: var(--color-critical);
+}

@@ -1,0 +1,232 @@
+.mg-gis-canvas {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+  background-color: #03070c;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  cursor: grab;
+  user-select: none;
+}
+
+.mg-gis-canvas.is-dragging {
+  cursor: grabbing;
+}
+
+.mg-gis-canvas__transform-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 60ms linear;
+}
+
+.mg-gis-canvas__svg-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.mg-gis-canvas__nodes-layer {
+  position: absolute;
+  inset: 0;
+}
+
+/* NODE PIN MARKERS */
+.mg-gis-node-pin {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  z-index: 15;
+  outline: none;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.mg-gis-node-pin.is-muted {
+  opacity: 0.18;
+  filter: grayscale(80%);
+  pointer-events: auto;
+}
+
+.mg-gis-node-pin:hover {
+  transform: translate(-50%, -50%) scale(1.18);
+  z-index: 30;
+}
+
+.mg-gis-node-pin.is-selected {
+  transform: translate(-50%, -50%) scale(1.3);
+  z-index: 35;
+}
+
+.mg-gis-node-pin__core {
+  width: 19px;
+  height: 19px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-surface-elevated);
+  border: 2px solid currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+}
+
+.mg-gis-node-pin__center-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background-color: currentColor;
+}
+
+.mg-gis-node-pin__risk-ring {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  border: 1.5px dashed currentColor;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0.75;
+}
+
+.mg-gis-node-pin.is-critical-pulse .mg-gis-node-pin__risk-ring {
+  animation: subtle-pulse 1.8s ease-in-out infinite;
+  opacity: 1;
+}
+
+.mg-gis-node-pin__label {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 4px;
+  border-radius: 3px;
+  background-color: rgba(7, 13, 20, 0.9);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border-subtle);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* PIN STATE COLORS */
+.mg-gis-node-pin--normal {
+  color: var(--color-normal);
+}
+.mg-gis-node-pin--warning {
+  color: var(--color-warning);
+}
+.mg-gis-node-pin--high_risk {
+  color: var(--color-high-risk);
+}
+.mg-gis-node-pin--critical {
+  color: var(--color-critical);
+}
+.mg-gis-node-pin--offline {
+  color: var(--color-text-muted);
+}
+.mg-gis-node-pin--offline .mg-gis-node-pin__core {
+  opacity: 0.5;
+}
+
+/* SELECTED PIN */
+.mg-gis-node-pin.is-selected .mg-gis-node-pin__core {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.6);
+  border-color: #ffffff;
+}
+
+/* HOVER TOOLTIP */
+.mg-gis-tooltip {
+  position: absolute;
+  transform: translate(-50%, calc(-100% - 14px));
+  background-color: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  padding: 6px 10px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  pointer-events: none;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  white-space: nowrap;
+}
+
+.mg-gis-tooltip__lead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.mg-gis-tooltip__id {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.mg-gis-tooltip__status {
+  font-size: 9px;
+  font-weight: 700;
+  padding: 1px 4px;
+  border-radius: 3px;
+}
+
+.mg-gis-tooltip__status--normal {
+  background-color: var(--color-normal-muted);
+  color: var(--color-normal);
+}
+.mg-gis-tooltip__status--warning {
+  background-color: var(--color-warning-muted);
+  color: var(--color-warning);
+}
+.mg-gis-tooltip__status--high_risk {
+  background-color: var(--color-high-risk-muted);
+  color: var(--color-high-risk);
+}
+.mg-gis-tooltip__status--critical {
+  background-color: var(--color-critical-muted);
+  color: var(--color-critical);
+}
+.mg-gis-tooltip__status--offline {
+  background-color: var(--color-offline-muted);
+  color: var(--color-text-muted);
+}
+
+.mg-gis-tooltip__row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 10px;
+  color: var(--color-text-secondary);
+}
+
+.mg-gis-tooltip__zone {
+  font-size: 9px;
+  color: var(--color-text-muted);
+}
+
+/* HUD HINT */
+.mg-gis-canvas__hud-hint {
+  position: absolute;
+  bottom: 8px;
+  left: 12px;
+  background-color: rgba(7, 13, 20, 0.75);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 10px;
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  pointer-events: none;
+  z-index: 20;
+}

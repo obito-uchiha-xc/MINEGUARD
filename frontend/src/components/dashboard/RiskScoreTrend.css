@@ -1,0 +1,167 @@
+.mg-risk-trend-panel {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+}
+
+.mg-risk-trend-panel__header {
+  padding: var(--space-3) var(--space-5);
+  background-color: var(--color-bg-alt);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.mg-risk-trend-panel__title-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.mg-risk-trend-panel__icon {
+  color: var(--color-high-risk);
+}
+
+.mg-risk-trend-panel__title {
+  font-size: var(--text-card-title);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0;
+  letter-spacing: 0.03em;
+}
+
+.mg-risk-trend-panel__window {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  background-color: var(--color-surface-elevated);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.mg-risk-trend-panel__body {
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.mg-risk-trend-panel__bars-container {
+  position: relative;
+  height: 160px;
+  width: 100%;
+}
+
+/* THRESHOLD GUIDES */
+.mg-risk-trend-panel__guides {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.mg-risk-trend-panel__guide-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-top: 1px dashed rgba(38, 53, 69, 0.6);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.mg-risk-trend-panel__guide-lbl {
+  font-size: 9px;
+  font-family: var(--font-mono);
+  color: var(--color-text-muted);
+  transform: translateY(-12px);
+  background-color: var(--color-surface);
+  padding: 0 4px;
+}
+
+/* BARS */
+.mg-risk-trend-panel__bars {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding-bottom: 22px;
+}
+
+.mg-risk-bar-col {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.mg-risk-bar-track {
+  width: 100%;
+  max-width: 32px;
+  height: 100%;
+  background-color: rgba(11, 17, 26, 0.5);
+  border-radius: 4px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  border: 1px solid var(--color-border-subtle);
+}
+
+.mg-risk-bar-fill {
+  width: 100%;
+  border-radius: 3px 3px 0 0;
+  transition: height var(--transition-base), opacity var(--transition-fast);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 2px;
+}
+
+.mg-risk-bar-fill.is-hovered {
+  opacity: 0.85;
+  filter: brightness(1.2);
+}
+
+.mg-risk-bar-val {
+  font-size: 10px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.mg-risk-bar-date {
+  font-size: 10px;
+  color: var(--color-text-secondary);
+  font-family: var(--font-mono);
+  white-space: nowrap;
+}
+
+/* FOOTER */
+.mg-risk-trend-panel__footer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  background-color: var(--color-bg-alt);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border-subtle);
+  font-size: 11px;
+  color: var(--color-text-secondary);
+}
+
+.mg-risk-trend-panel__info-icon {
+  color: var(--color-info);
+  flex-shrink: 0;
+}

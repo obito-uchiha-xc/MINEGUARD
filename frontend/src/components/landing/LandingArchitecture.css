@@ -1,0 +1,87 @@
+.mg-landing-arch {
+  padding: 80px 0;
+  position: relative;
+}
+
+.mg-landing-arch__container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.mg-landing-arch__header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 56px;
+}
+
+.mg-landing-arch__eyebrow {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #f3ca68;
+  margin-bottom: 14px;
+}
+
+.mg-landing-arch__title {
+  font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin: 0 0 16px;
+}
+
+.mg-landing-arch__subtitle {
+  font-size: 1.05rem;
+  color: #a1a1aa;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.mg-landing-arch__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.mg-arch-card {
+  background: #0e0e14;
+  border: 1px solid rgba(229, 169, 60, 0.14);
+  border-radius: 14px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.mg-arch-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(229, 169, 60, 0.35);
+}
+
+.mg-arch-card__icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(229, 169, 60, 0.08);
+  border: 1px solid rgba(229, 169, 60, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.mg-arch-card__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 8px;
+}
+
+.mg-arch-card__desc {
+  font-size: 0.85rem;
+  color: #a1a1aa;
+  line-height: 1.55;
+  margin: 0;
+}

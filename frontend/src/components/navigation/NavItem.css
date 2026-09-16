@@ -1,0 +1,85 @@
+.mg-nav-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-size: var(--text-body);
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  position: relative;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.mg-nav-item:hover {
+  background-color: var(--color-surface-hover);
+  color: var(--color-text-primary);
+}
+
+.mg-nav-item.is-active {
+  background: linear-gradient(90deg, rgba(229, 169, 60, 0.14) 0%, rgba(229, 169, 60, 0.02) 100%);
+  color: #f4f4f7;
+  font-weight: 600;
+  border-left: 3px solid #e5a93c;
+  border-top: 1px solid rgba(229, 169, 60, 0.2);
+  border-bottom: 1px solid rgba(229, 169, 60, 0.2);
+  border-right: 1px solid rgba(229, 169, 60, 0.1);
+  box-shadow: 0 0 12px rgba(229, 169, 60, 0.1);
+}
+
+.mg-nav-item.is-active .mg-nav-item__icon {
+  color: #e5a93c;
+  filter: drop-shadow(0 0 4px rgba(229, 169, 60, 0.4));
+}
+
+.mg-nav-item__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.mg-nav-item:hover .mg-nav-item__icon {
+  color: var(--color-text-primary);
+}
+
+.mg-nav-item__label {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mg-nav-item__badge-wrap {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* COLLAPSED STATE */
+.mg-nav-item.is-collapsed {
+  justify-content: center;
+  padding: 10px 0;
+  width: 44px;
+  height: 44px;
+  margin: 0 auto;
+}
+
+.mg-nav-item.is-collapsed .mg-nav-item__badge-wrap {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  margin-left: 0;
+}
+
+.mg-nav-item__badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-critical);
+  box-shadow: 0 0 0 2px var(--color-surface);
+}

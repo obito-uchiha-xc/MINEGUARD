@@ -1,0 +1,396 @@
+.mg-mine-map {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 440px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* MAP HEADER */
+.mg-mine-map__header {
+  padding: var(--space-3) var(--space-5);
+  background-color: var(--color-bg-alt);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.mg-mine-map__title-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.mg-mine-map__status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-normal);
+}
+
+.mg-mine-map__title {
+  font-size: var(--text-card-title);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.mg-mine-map__depth {
+  font-size: 10px;
+  font-weight: 600;
+  color: #e5a93c;
+  background-color: rgba(229, 169, 60, 0.08);
+  padding: 2px 7px;
+  border-radius: 4px;
+  border: 1px solid rgba(229, 169, 60, 0.2);
+}
+
+.mg-mine-map__node-count {
+  font-size: 10px;
+  color: var(--color-text-muted, #71717a);
+  background-color: rgba(255, 255, 255, 0.03);
+  padding: 2px 7px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* CONTROLS (LEGEND & FULL MAP LINK) */
+.mg-mine-map__controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mg-mine-map__expand-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-text-secondary, #d4d4d8);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.mg-mine-map__expand-btn:hover {
+  background: rgba(229, 169, 60, 0.1);
+  border-color: rgba(229, 169, 60, 0.3);
+  color: #f3ca68;
+}
+
+/* LEGEND */
+.mg-mine-map__legend {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  flex-wrap: wrap;
+}
+
+.mg-mine-map__legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.mg-mine-map__legend-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+.mg-mine-map__legend-dot--normal {
+  background-color: var(--color-normal);
+}
+
+.mg-mine-map__legend-dot--warning {
+  background-color: var(--color-warning);
+}
+
+.mg-mine-map__legend-dot--high-risk {
+  background-color: var(--color-high-risk);
+}
+
+.mg-mine-map__legend-dot--critical {
+  background-color: var(--color-critical);
+}
+
+.mg-mine-map__legend-dot--offline {
+  background-color: var(--color-offline);
+}
+
+/* MAP VIEWPORT */
+.mg-mine-map__viewport {
+  position: relative;
+  flex: 1;
+  min-height: 380px;
+  background-color: #050a10;
+  overflow: hidden;
+  user-select: none;
+}
+
+.mg-mine-map__svg-grid {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.mg-mine-map__nodes-layer {
+  position: absolute;
+  inset: 0;
+}
+
+/* NODE PIN MARKERS */
+.mg-node-pin {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  z-index: 10;
+  transition: transform var(--transition-fast);
+  outline: none;
+}
+
+.mg-node-pin:hover {
+  transform: translate(-50%, -50%) scale(1.15);
+  z-index: 25;
+}
+
+.mg-node-pin.is-selected {
+  transform: translate(-50%, -50%) scale(1.25);
+  z-index: 30;
+}
+
+.mg-node-pin__core {
+  width: 18px;
+  height: 18px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-surface-elevated);
+  border: 2px solid currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+}
+
+.mg-node-pin__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background-color: currentColor;
+}
+
+.mg-node-pin__risk-ring {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  border: 1px dashed currentColor;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.mg-node-pin.is-critical-pulse .mg-node-pin__risk-ring {
+  animation: subtle-pulse 1.8s ease-in-out infinite;
+  opacity: 1;
+}
+
+.mg-node-pin__label {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 4px;
+  border-radius: 3px;
+  background-color: rgba(7, 13, 20, 0.85);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border-subtle);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* PIN STATE COLORS */
+.mg-node-pin--normal {
+  color: var(--color-normal);
+}
+
+.mg-node-pin--warning {
+  color: var(--color-warning);
+}
+
+.mg-node-pin--high_risk {
+  color: var(--color-high-risk);
+}
+
+.mg-node-pin--critical {
+  color: var(--color-critical);
+}
+
+.mg-node-pin--offline {
+  color: var(--color-text-muted);
+}
+.mg-node-pin--offline .mg-node-pin__core {
+  opacity: 0.6;
+}
+
+/* SELECTED PIN OUTLINE */
+.mg-node-pin.is-selected .mg-node-pin__core {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+  border-color: #ffffff;
+}
+
+/* NODE TELEMETRY POPUP DIALOG */
+.mg-node-popup {
+  position: absolute;
+  bottom: var(--space-4);
+  right: var(--space-4);
+  width: 330px;
+  max-width: calc(100% - 32px);
+  background-color: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  z-index: 50;
+  overflow: hidden;
+  animation: popup-fade-up 180ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+@keyframes popup-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mg-node-popup__header {
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.mg-node-popup__title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mg-node-popup__id-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.mg-node-popup__id {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.mg-node-popup__name {
+  font-size: var(--text-metadata);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.mg-node-popup__zone {
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+.mg-node-popup__close {
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--transition-fast);
+}
+
+.mg-node-popup__close:hover {
+  color: var(--color-text-primary);
+}
+
+.mg-node-popup__grid {
+  padding: var(--space-3) var(--space-4);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2) var(--space-3);
+  font-size: var(--text-metadata);
+}
+
+.mg-node-popup__metric {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.mg-node-popup__lbl {
+  font-size: 10px;
+  color: var(--color-text-muted);
+  letter-spacing: 0.04em;
+}
+
+.mg-node-popup__val {
+  font-size: var(--text-metadata);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.mg-node-popup__footer {
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.mg-node-popup__link-meta {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+.mg-node-popup__radio-icon {
+  color: var(--color-normal);
+}

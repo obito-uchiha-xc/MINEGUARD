@@ -1,0 +1,99 @@
+.mg-data-table-section {
+  background-color: var(--color-surface-container);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-4);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.mg-data-table-section__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--color-surface-container-high);
+}
+
+.mg-data-table-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  padding: 0;
+}
+
+.mg-data-table-toggle-btn:hover {
+  color: var(--color-primary);
+}
+
+.mg-data-table-toggle-btn .count {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-tertiary);
+}
+
+.mg-data-table-wrapper {
+  overflow-x: auto;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.mg-granular-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+  text-align: left;
+}
+
+.mg-granular-table th {
+  position: sticky;
+  top: 0;
+  background-color: var(--color-surface-container-highest);
+  color: var(--color-text-tertiary);
+  font-size: 10px;
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--color-border);
+  white-space: nowrap;
+  z-index: 2;
+}
+
+.mg-granular-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--color-border-subtle);
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+.mg-granular-table tr:hover td {
+  background-color: var(--color-surface-container-high);
+}
+
+.mg-granular-table tr.row-anomaly td {
+  background-color: rgba(239, 68, 68, 0.04);
+}
+
+.cond-tag {
+  font-size: 9px;
+  font-weight: var(--font-weight-bold);
+  padding: 1px 5px;
+  border-radius: 2px;
+  text-transform: uppercase;
+}
+
+.cond-anomaly {
+  background-color: var(--color-critical-muted);
+  color: var(--color-critical);
+}
+
+.cond-normal {
+  background-color: var(--color-normal-muted);
+  color: var(--color-normal);
+}

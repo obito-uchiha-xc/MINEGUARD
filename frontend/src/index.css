@@ -1,0 +1,106 @@
+@import './styles/index.css';
+
+/* ==========================================================================
+   COMFORTABLE OBSIDIAN & REFINED GOLD AESTHETIC
+   Designed for optical clarity, zero eye fatigue, and subtle luxury luminescence
+   ========================================================================== */
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  background-color: #09090c;
+  background-image: 
+    radial-gradient(ellipse 65% 35% at 50% -5%, rgba(229, 169, 60, 0.08), transparent 70%),
+    radial-gradient(circle at 95% 95%, rgba(212, 146, 40, 0.04), transparent 45%),
+    linear-gradient(180deg, #09090c 0%, #0d0d12 50%, #09090c 100%);
+  background-attachment: fixed;
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: var(--line-height-normal);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* CRISP, EYE-COMFORTABLE GOLD ACCENTS (NO BLURRY HALOS) */
+.text-gold-glow {
+  color: #f3ca68;
+  text-shadow: 0 0 10px rgba(243, 202, 104, 0.35);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #e5a93c 0%, #fef3c7 45%, #d49228 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 1px 4px rgba(229, 169, 60, 0.25));
+}
+
+/* HIGH DENSITY MONOSPACE TELEMETRY */
+.mono-telemetry,
+code,
+kbd,
+samp {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+/* SELECTION ACCENT */
+::selection {
+  background-color: rgba(229, 169, 60, 0.3);
+  color: #ffffff;
+}
+
+/* SUBTLE HOVER GLOW */
+.glow-on-hover {
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.glow-on-hover:hover {
+  border-color: rgba(229, 169, 60, 0.4);
+  box-shadow: 0 0 14px rgba(229, 169, 60, 0.18);
+}
+
+/* CUSTOM COMFORTABLE SCROLLBAR */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #09090c;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e1e28;
+  border: 1px solid rgba(229, 169, 60, 0.15);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d49228;
+  box-shadow: 0 0 8px rgba(229, 169, 60, 0.3);
+}
+
+/* RESTRAINED FOCUS RING */
+:focus-visible {
+  outline: 2px solid #e5a93c;
+  outline-offset: 2px;
+}

@@ -1,0 +1,125 @@
+.mg-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+  user-select: none;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.mg-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* SIZES */
+.mg-btn--sm {
+  height: 32px;
+  padding: 0 var(--space-3);
+  font-size: var(--text-metadata);
+}
+
+.mg-btn--md {
+  height: 38px;
+  padding: 0 var(--space-4);
+  font-size: var(--text-body);
+}
+
+.mg-btn--lg {
+  height: 44px;
+  padding: 0 var(--space-5);
+  font-size: var(--text-card-title);
+}
+
+/* VARIANTS */
+/* Primary: Warm Brushed Gold */
+.mg-btn--primary {
+  background: linear-gradient(135deg, #c78824 0%, #e5a93c 50%, #f3ba4f 100%);
+  color: #090804;
+  font-weight: 600;
+  border: 1px solid rgba(251, 240, 211, 0.35);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5), 0 0 12px rgba(229, 169, 60, 0.2);
+}
+.mg-btn--primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, #d49228 0%, #f3ba4f 50%, #f8cf78 100%);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6), 0 0 16px rgba(229, 169, 60, 0.32);
+  transform: translateY(-1px);
+}
+.mg-btn--primary:active:not(:disabled) {
+  background: #c78824;
+  transform: translateY(0);
+}
+
+/* Secondary: Obsidian Surface with Hairline Border */
+.mg-btn--secondary {
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  border-color: var(--color-border);
+}
+.mg-btn--secondary:hover:not(:disabled) {
+  background-color: var(--color-surface-hover);
+  border-color: rgba(229, 169, 60, 0.35);
+  color: var(--color-text-primary);
+  box-shadow: 0 0 10px rgba(229, 169, 60, 0.12);
+}
+.mg-btn--secondary:active:not(:disabled) {
+  background-color: var(--color-surface-elevated);
+}
+
+/* Ghost / Flat */
+.mg-btn--ghost {
+  background-color: transparent;
+  color: var(--color-text-secondary);
+}
+.mg-btn--ghost:hover:not(:disabled) {
+  background-color: var(--color-surface-hover);
+  color: #fde047;
+}
+
+/* Danger */
+.mg-btn--danger {
+  background-color: var(--color-critical);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+.mg-btn--danger:hover:not(:disabled) {
+  background-color: #dc2626;
+  box-shadow: 0 0 16px rgba(239, 68, 68, 0.35);
+}
+
+/* Outline */
+.mg-btn--outline {
+  background-color: transparent;
+  border-color: var(--color-border);
+  color: var(--color-text-primary);
+}
+.mg-btn--outline:hover:not(:disabled) {
+  border-color: var(--color-info);
+  color: #fde047;
+  background-color: rgba(245, 158, 11, 0.08);
+  box-shadow: 0 0 14px rgba(245, 158, 11, 0.25);
+}
+
+.mg-btn__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mg-btn__spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

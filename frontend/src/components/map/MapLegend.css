@@ -1,0 +1,99 @@
+.mg-map-legend {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-2) var(--space-4);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  font-size: 11px;
+  flex-wrap: wrap;
+}
+
+.mg-map-legend__section {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.mg-map-legend__title {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.mg-map-legend__items {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.mg-map-legend__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--color-text-secondary);
+}
+
+.mg-map-legend__divider {
+  width: 1px;
+  height: 16px;
+  background-color: var(--color-border);
+}
+
+/* DOTS */
+.mg-map-legend__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+.mg-map-legend__dot--normal {
+  background-color: var(--color-normal);
+}
+.mg-map-legend__dot--warning {
+  background-color: var(--color-warning);
+}
+.mg-map-legend__dot--high {
+  background-color: var(--color-high-risk);
+}
+.mg-map-legend__dot--critical {
+  background-color: var(--color-critical);
+}
+.mg-map-legend__dot--offline {
+  background-color: var(--color-offline);
+}
+
+/* BOXES */
+.mg-map-legend__box {
+  width: 12px;
+  height: 8px;
+  border-radius: 2px;
+  border: 1px solid currentColor;
+}
+
+.mg-map-legend__box--low {
+  background-color: var(--color-normal-muted);
+  color: var(--color-normal);
+}
+
+.mg-map-legend__box--elevated {
+  background-color: var(--color-warning-muted);
+  color: var(--color-warning);
+}
+
+.mg-map-legend__box--high {
+  background-color: var(--color-high-risk-muted);
+  color: var(--color-high-risk);
+}
+
+.mg-map-legend__box--critical {
+  background-color: var(--color-critical-muted);
+  color: var(--color-critical);
+}

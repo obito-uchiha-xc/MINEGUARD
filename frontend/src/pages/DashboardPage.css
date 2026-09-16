@@ -1,0 +1,125 @@
+.mg-dashboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4, 16px);
+}
+
+/* 1. TOP METRIC ROW (EXECUTIVE TELEMETRY RIBBON) */
+.mg-dashboard__metric-row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+  width: 100%;
+}
+
+@media (max-width: 1100px) {
+  .mg-dashboard__metric-row {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+}
+
+@media (max-width: 680px) {
+  .mg-dashboard__metric-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+}
+
+/* 2. MAIN GRID (MAP & RISK/ALERTS) */
+.mg-dashboard__main-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: var(--space-5);
+  align-items: stretch;
+}
+
+.mg-dashboard__map-col {
+  display: flex;
+  flex-direction: column;
+  min-height: 480px;
+}
+
+.mg-dashboard__side-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+@media (max-width: 1100px) {
+  .mg-dashboard__main-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mg-dashboard__side-col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+}
+
+@media (max-width: 768px) {
+  .mg-dashboard__side-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 3. LOWER GRID (PARAMETER TRENDS & RISK SCORE TREND) */
+.mg-dashboard__lower-grid {
+  display: grid;
+  grid-template-columns: 1.75fr 1fr;
+  gap: var(--space-5);
+  align-items: stretch;
+}
+
+.mg-dashboard__trends-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.mg-dashboard__risk-trend-col {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 1100px) {
+  .mg-dashboard__lower-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* MOBILE ORDERING RE-PRIORITIZATION (Priority: Risk -> Metrics -> Alerts -> Map -> Trends) */
+@media (max-width: 640px) {
+  .mg-dashboard-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mg-dashboard__main-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Reorder for critical safety visual hierarchy */
+  .mg-dashboard__side-col > :first-child {
+    order: 1; /* Current Mine Risk at very top */
+  }
+
+  .mg-dashboard__metric-row {
+    order: 2; /* Key metrics */
+  }
+
+  .mg-dashboard__side-col > :last-child {
+    order: 3; /* Recent Alerts */
+  }
+
+  .mg-dashboard__map-col {
+    order: 4; /* Live Mine Map */
+  }
+
+  .mg-dashboard__lower-grid {
+    order: 5;
+    display: flex;
+    flex-direction: column;
+  }
+}

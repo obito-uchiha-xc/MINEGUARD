@@ -1,0 +1,334 @@
+.mg-landing-hero {
+  position: relative;
+  padding: 60px 0 72px;
+  overflow: hidden;
+}
+
+.mg-landing-hero__container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Badge */
+.mg-landing-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 18px;
+  border-radius: 6px;
+  background: rgba(229, 169, 60, 0.08);
+  border: 1px solid rgba(229, 169, 60, 0.3);
+  margin-bottom: 24px;
+}
+
+.mg-landing-hero__badge-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #e5a93c;
+  box-shadow: 0 0 10px #e5a93c;
+  animation: mg-pulse-slow 2s infinite ease-in-out;
+}
+
+.mg-landing-hero__badge-text {
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #f3ca68;
+}
+
+/* Title */
+.mg-landing-hero__title {
+  font-size: clamp(2.2rem, 4.8vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.16;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  max-width: 980px;
+  margin: 0 0 20px;
+}
+
+.mg-landing-hero__title-gold {
+  display: block;
+  margin-top: 6px;
+}
+
+/* Subtitle */
+.mg-landing-hero__subtitle {
+  font-size: clamp(0.98rem, 1.8vw, 1.15rem);
+  line-height: 1.65;
+  color: #a1a1aa;
+  max-width: 860px;
+  margin: 0 0 36px;
+  font-weight: 400;
+}
+
+/* CTAs */
+.mg-landing-hero__cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 56px;
+}
+
+.mg-hero-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 26px;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.mg-hero-btn:hover {
+  transform: translateY(-2px);
+}
+
+.mg-hero-btn--primary {
+  background: linear-gradient(135deg, #e5a93c 0%, #c78824 100%);
+  color: #09090c;
+  border: 1px solid rgba(229, 169, 60, 0.65);
+  box-shadow: 0 4px 18px rgba(229, 169, 60, 0.35);
+}
+
+.mg-hero-btn--primary:hover {
+  box-shadow: 0 8px 26px rgba(229, 169, 60, 0.5);
+  filter: brightness(1.06);
+}
+
+.mg-hero-btn--secondary {
+  background: rgba(20, 20, 28, 0.85);
+  color: #f5f5f7;
+  border: 1px solid rgba(229, 169, 60, 0.25);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.mg-hero-btn--secondary:hover {
+  border-color: rgba(229, 169, 60, 0.45);
+  color: #f3ca68;
+}
+
+.mg-hero-btn--alert {
+  background: rgba(239, 68, 68, 0.08);
+  color: #fca5a5;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.mg-hero-btn--alert:hover {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: rgba(239, 68, 68, 0.5);
+}
+
+.mg-hero-btn__alert-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ef4444;
+  box-shadow: 0 0 8px #ef4444;
+}
+
+/* Industrial Sector Health Board */
+.mg-landing-hero__board {
+  width: 100%;
+  max-width: 1160px;
+  background: #0d0d13;
+  border: 1px solid rgba(229, 169, 60, 0.22);
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 24px rgba(229, 169, 60, 0.08);
+  overflow: hidden;
+  text-align: left;
+}
+
+.mg-board__header {
+  padding: 14px 22px;
+  background: rgba(18, 18, 26, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.mg-board__live-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #34d399;
+}
+
+.mg-board__pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  animation: mg-pulse-slow 2s infinite ease-in-out;
+}
+
+.mg-board__telemetry-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.75rem;
+  color: #a1a1aa;
+}
+
+.mg-board__divider {
+  color: #3f3f46;
+}
+
+.mg-board__sectors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.mg-sector-panel {
+  background: #0d0d13;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mg-sector-panel--critical {
+  background: rgba(245, 158, 11, 0.04);
+  border-left: 3px solid #e5a93c;
+}
+
+.mg-sector-panel__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.mg-sector-panel__badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.mg-sector-panel__badge--normal {
+  background: rgba(16, 185, 129, 0.12);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.mg-sector-panel__badge--critical {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+.mg-sector-panel__id {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #71717a;
+}
+
+.mg-sector-panel__name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 16px;
+}
+
+.mg-sector-panel__readings {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 12px 14px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  margin-bottom: 16px;
+}
+
+.mg-sector-panel__reading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+
+.mg-reading-label {
+  color: #a1a1aa;
+}
+
+.mg-reading-val {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.mg-sector-panel__status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  color: #a1a1aa;
+  margin-top: auto;
+}
+
+.mg-sector-panel__status--alert {
+  color: #f3ca68;
+}
+
+.mg-board__footer {
+  padding: 14px 22px;
+  background: rgba(14, 14, 20, 0.95);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.mg-board__footer-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #a1a1aa;
+}
+
+.mg-board__links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+
+.mg-board__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #f3ca68;
+  text-decoration: none;
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.mg-board__link:hover {
+  color: #ffffff;
+  transform: translateX(2px);
+}

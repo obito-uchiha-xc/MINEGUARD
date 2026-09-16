@@ -1,0 +1,392 @@
+.mg-topbar {
+  height: 64px;
+  background-color: var(--color-bg-alt);
+  border-bottom: 1px solid var(--color-border);
+  padding: 0 var(--space-6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  position: relative;
+  width: 100%;
+}
+
+/* LEFT */
+.mg-topbar__left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.mg-topbar__desktop-toggle {
+  display: flex;
+  align-items: center;
+}
+
+.mg-topbar__mobile-toggle {
+  display: none;
+}
+
+.mg-topbar__context-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+}
+
+.mg-topbar__context-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background-color: #e5a93c;
+  box-shadow: 0 0 6px rgba(229, 169, 60, 0.6);
+}
+
+.mg-topbar__context-title {
+  font-size: 10px;
+  font-weight: 700;
+  color: #e5a93c;
+  letter-spacing: 0.06em;
+}
+
+.mg-topbar__context-sep {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 10px;
+}
+
+.mg-topbar__overview-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--color-text-secondary, #a1a1aa);
+  font-size: 11px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+
+.mg-topbar__overview-link:hover {
+  color: #ffffff;
+}
+
+/* RIGHT */
+.mg-topbar__right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+/* UNIFIED TELEMETRY & CLOCK CAPSULE */
+.mg-topbar__telemetry-capsule {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  background-color: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  font-size: 11px;
+}
+
+.mg-topbar__capsule-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background-color: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  animation: mgCapsulePulse 2s ease-in-out infinite;
+}
+
+@keyframes mgCapsulePulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.85);
+  }
+}
+
+.mg-topbar__capsule-status {
+  font-size: 10px;
+  font-weight: 700;
+  color: #10b981;
+  letter-spacing: 0.06em;
+}
+
+.mg-topbar__capsule-divider {
+  width: 1px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.mg-topbar__capsule-icon {
+  color: var(--color-text-muted);
+}
+
+.mg-topbar__capsule-time {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  letter-spacing: 0.02em;
+}
+
+.mg-topbar__capsule-date {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+}
+
+/* ACTION WRAP (FOR POPUP MENUS) */
+.mg-topbar__action-wrap {
+  position: relative;
+  display: inline-flex;
+}
+
+.mg-topbar__icon-trigger {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: rgba(255, 255, 255, 0.03);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.mg-topbar__icon-trigger:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.mg-topbar__notif-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+}
+
+.mg-topbar__notif-badge .mg-badge {
+  padding: 1px 5px;
+  font-size: 10px;
+}
+
+/* USER TRIGGER */
+.mg-topbar__user-trigger {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 3px 10px 3px 6px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: left;
+}
+
+.mg-topbar__user-trigger:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(229, 169, 60, 0.35);
+  box-shadow: 0 0 12px rgba(229, 169, 60, 0.15);
+}
+
+.mg-topbar__user-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, rgba(229, 169, 60, 0.18) 0%, rgba(229, 169, 60, 0.05) 100%);
+  border: 1px solid rgba(229, 169, 60, 0.35);
+  color: #f3ca68;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mg-topbar__user-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.mg-topbar__user-name {
+  font-size: var(--text-metadata);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+}
+
+.mg-topbar__user-role {
+  font-size: 10px;
+  color: var(--color-text-muted);
+  line-height: 1.1;
+}
+
+/* RESPONSIVE BREAKPOINTS */
+@media (max-width: 1024px) {
+  .mg-topbar__date-item {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .mg-topbar {
+    padding: 0 var(--space-3);
+  }
+
+  .mg-topbar__desktop-toggle {
+    display: none;
+  }
+
+  .mg-topbar__mobile-toggle {
+    display: flex;
+  }
+
+  .mg-topbar__env-pill {
+    display: none;
+  }
+
+  .mg-topbar__user-meta {
+    display: none;
+  }
+
+  .mg-topbar__telemetry-capsule {
+    padding: 3px 8px;
+  }
+
+  .mg-topbar__capsule-date {
+    display: none;
+  }
+
+  .mg-topbar__capsule-divider:last-of-type {
+    display: none;
+  }
+
+  .mg-topbar__sound-controls {
+    display: none;
+  }
+}
+
+/* SOUND & KIOSK CONTROLS */
+.mg-topbar__sound-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 3px 6px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.mg-topbar__audio-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--color-text-secondary);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.mg-topbar__audio-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--color-text-primary);
+}
+
+.mg-topbar__audio-btn.is-testing {
+  background: rgba(229, 169, 60, 0.15);
+  border-color: rgba(229, 169, 60, 0.4);
+  color: #f3ca68;
+}
+
+.mg-topbar__audio-btn.is-muted {
+  background: rgba(239, 68, 68, 0.08);
+  border-color: rgba(239, 68, 68, 0.25);
+}
+
+/* SOS BUZZER BUTTON */
+.mg-topbar__sos-btn {
+  background: rgba(245, 158, 11, 0.08);
+  border-color: rgba(245, 158, 11, 0.25);
+  color: #f3ca68;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.mg-topbar__sos-btn:hover {
+  background: rgba(245, 158, 11, 0.16);
+  border-color: rgba(245, 158, 11, 0.45);
+}
+
+.mg-topbar__sos-btn.is-buzzing {
+  background: rgba(239, 68, 68, 0.35) !important;
+  border-color: #ef4444 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 16px rgba(239, 68, 68, 0.6), inset 0 0 8px rgba(239, 68, 68, 0.3);
+  transform: scale(0.97);
+}
+
+/* TOPBAR HAZARD SHUT & REARM BUTTONS */
+.mg-topbar__shut-alarm-btn {
+  background: #dc2626 !important;
+  border-color: #f87171 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 14px rgba(239, 68, 68, 0.7);
+  animation: mgTopBarPulse 1s ease-in-out infinite alternate;
+}
+
+.mg-topbar__shut-alarm-btn:hover {
+  background: #b91c1c !important;
+  border-color: #ffffff !important;
+  transform: scale(1.03);
+}
+
+.mg-topbar__rearm-alarm-btn {
+  background: rgba(245, 158, 11, 0.12) !important;
+  border-color: rgba(245, 158, 11, 0.3) !important;
+  color: #fcd34d !important;
+}
+
+.mg-topbar__rearm-alarm-btn:hover {
+  background: rgba(245, 158, 11, 0.25) !important;
+  color: #ffffff !important;
+}
+
+.mg-topbar__mobile-shut-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: #dc2626;
+  border: 1px solid #f87171;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.6);
+  animation: mgTopBarPulse 1s ease-in-out infinite alternate;
+}
+
+@keyframes mgTopBarPulse {
+  0% {
+    box-shadow: 0 0 6px rgba(239, 68, 68, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 16px rgba(239, 68, 68, 0.9);
+  }
+}
+

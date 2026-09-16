@@ -1,0 +1,188 @@
+.mg-header {
+  background-color: var(--color-bg-alt);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+}
+
+.mg-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-6);
+  height: 64px;
+  gap: var(--space-4);
+}
+
+/* BRAND */
+.mg-header__brand-area {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+.mg-header__logo-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mg-header__logo-icon {
+  color: var(--color-info);
+}
+
+.mg-header__title-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.mg-header__brand-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.mg-header__title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--color-text-primary);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.mg-header__sub-tag {
+  font-size: 9px;
+  font-weight: 700;
+  background-color: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  padding: 1px 5px;
+  border-radius: 4px;
+  color: var(--color-text-muted);
+  letter-spacing: 0.08em;
+}
+
+.mg-header__tagline {
+  font-size: var(--text-metadata);
+  color: var(--color-text-muted);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+/* NAVIGATION TABS */
+.mg-header__nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  height: 100%;
+}
+
+.mg-header__tab {
+  height: 40px;
+  padding: 0 var(--space-3);
+  border: none;
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  font-weight: 500;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.mg-header__tab:hover {
+  background-color: var(--color-surface-hover);
+  color: var(--color-text-primary);
+}
+
+.mg-header__tab.is-active {
+  background-color: var(--color-surface-elevated);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+}
+
+.mg-header__tab-badge {
+  font-size: 11px;
+  padding: 1px 6px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-surface);
+  color: var(--color-text-muted);
+}
+
+/* STATUS & CLOCK */
+.mg-header__status-area {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-shrink: 0;
+}
+
+.mg-header__system-state {
+  display: flex;
+  align-items: center;
+}
+
+.mg-header__clock {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 4px 10px;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-metadata);
+}
+
+.mg-header__clock-icon {
+  color: var(--color-text-muted);
+}
+
+.mg-header__time-local {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+.mg-header__time-utc {
+  color: var(--color-text-muted);
+}
+
+/* RESPONSIVE BREAKPOINTS */
+@media (max-width: 1024px) {
+  .mg-header__tagline {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .mg-header__inner {
+    padding: 0 var(--space-3);
+    height: auto;
+    flex-wrap: wrap;
+    padding-top: var(--space-2);
+    padding-bottom: var(--space-2);
+  }
+
+  .mg-header__nav {
+    order: 3;
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+
+  .mg-header__time-utc {
+    display: none;
+  }
+}

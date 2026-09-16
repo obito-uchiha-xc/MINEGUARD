@@ -1,0 +1,31 @@
+.mg-page-container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: var(--space-6) var(--space-6);
+  flex: 1;
+}
+
+.mg-page-container--standard {
+  max-width: 1200px;
+}
+
+.mg-page-container--wide {
+  max-width: 1600px;
+}
+
+.mg-page-container--full {
+  max-width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .mg-page-container {
+    padding: var(--space-5) var(--space-4);
+  }
+}
+
+@media (max-width: 640px) {
+  .mg-page-container {
+    padding: var(--space-4) var(--space-3);
+  }
+}

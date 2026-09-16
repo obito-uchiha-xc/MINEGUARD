@@ -1,0 +1,165 @@
+/* MetricCard.css */
+
+.mg-metric-card {
+  position: relative;
+  background-color: var(--color-surface, #18181b);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: var(--radius-md, 8px);
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.mg-metric-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+  background-color: rgba(32, 32, 36, 0.95);
+}
+
+/* TOP STATUS ACCENT STRIPE */
+.mg-metric-card__accent {
+  height: 2px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.15);
+  transition: opacity 0.2s ease;
+}
+
+.mg-metric-card--increase-risk .mg-metric-card__accent {
+  background: linear-gradient(90deg, #f97316, #ea580c);
+}
+
+.mg-metric-card--moderate-risk .mg-metric-card__accent {
+  background: linear-gradient(90deg, #f59e0b, #d97706);
+}
+
+.mg-metric-card--good .mg-metric-card__accent {
+  background: linear-gradient(90deg, #10b981, #059669);
+}
+
+.mg-metric-card--neutral .mg-metric-card__accent {
+  background: linear-gradient(90deg, #38bdf8, #0284c7);
+}
+
+/* INNER CONTAINER */
+.mg-metric-card__inner {
+  padding: 10px 14px 11px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+/* HEADER: LABEL & ICON */
+.mg-metric-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.mg-metric-card__label {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--color-text-muted, #a1a1aa);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mg-metric-card__icon-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted, #71717a);
+  transition: color 0.15s ease;
+}
+
+.mg-metric-card:hover .mg-metric-card__icon-wrap {
+  color: var(--color-text-primary, #ffffff);
+}
+
+.mg-metric-card--increase-risk .mg-metric-card__icon-wrap {
+  color: #f97316;
+}
+
+.mg-metric-card--moderate-risk .mg-metric-card__icon-wrap {
+  color: #f59e0b;
+}
+
+.mg-metric-card--good .mg-metric-card__icon-wrap {
+  color: #10b981;
+}
+
+/* MAIN VALUE */
+.mg-metric-card__main {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.mg-metric-card__val {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-text-primary, #ffffff);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.mg-metric-card__unit {
+  font-size: 11px;
+  color: var(--color-text-secondary, #a1a1aa);
+  font-weight: 500;
+}
+
+/* FOOTER DELTA */
+.mg-metric-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  margin-top: 1px;
+}
+
+.mg-metric-card__change {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: 600;
+  font-family: var(--font-mono, monospace);
+  letter-spacing: 0.01em;
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.mg-metric-card__change--increase-risk {
+  color: #fb923c;
+  background-color: rgba(249, 115, 22, 0.12);
+}
+
+.mg-metric-card__change--moderate-risk {
+  color: #fbbf24;
+  background-color: rgba(245, 158, 11, 0.12);
+}
+
+.mg-metric-card__change--good {
+  color: #34d399;
+  background-color: rgba(16, 185, 129, 0.12);
+}
+
+.mg-metric-card__change--neutral {
+  color: #38bdf8;
+  background-color: rgba(56, 189, 248, 0.12);
+}
+
+.mg-metric-card__secondary {
+  font-size: 10px;
+  color: var(--color-text-muted, #71717a);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

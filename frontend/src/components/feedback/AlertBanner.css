@@ -1,0 +1,69 @@
+.mg-alert-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  font-size: var(--text-body);
+  border: 1px solid transparent;
+  line-height: 1.4;
+}
+
+.mg-alert-banner__content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.mg-alert-banner__icon-wrap {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.mg-alert-banner__text {
+  min-width: 0;
+}
+
+.mg-alert-banner__title {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+.mg-alert-banner__msg {
+  color: var(--color-text-secondary);
+}
+
+.mg-alert-banner__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+/* SEVERITIES */
+.mg-alert-banner--info {
+  background-color: var(--color-info-muted);
+  border-color: var(--color-info-border);
+  color: var(--color-info);
+}
+
+.mg-alert-banner--warning {
+  background-color: var(--color-warning-muted);
+  border-color: var(--color-warning-border);
+  color: var(--color-warning);
+}
+
+.mg-alert-banner--high_risk {
+  background-color: var(--color-high-risk-muted);
+  border-color: var(--color-high-risk-border);
+  color: var(--color-high-risk);
+}
+
+.mg-alert-banner--critical {
+  background-color: var(--color-critical-muted);
+  border-color: var(--color-critical-border);
+  color: var(--color-critical);
+}
