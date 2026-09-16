@@ -23,10 +23,11 @@
 
 .mg-page-header__title {
   font-size: var(--text-page-title);
-  font-weight: 600;
+  font-weight: 700;
   color: var(--color-text-primary);
   line-height: 1.25;
   letter-spacing: -0.02em;
+  text-shadow: 0 0 12px rgba(243, 202, 104, 0.25);
 }
 
 .mg-page-header__badge {

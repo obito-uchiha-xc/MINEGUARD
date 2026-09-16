@@ -2,11 +2,11 @@
 
 .mg-metric-card {
   position: relative;
-  background-color: var(--color-surface, #18181b);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: var(--radius-md, 8px);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
@@ -14,33 +14,33 @@
 
 .mg-metric-card:hover {
   transform: translateY(-2px);
-  border-color: rgba(255, 255, 255, 0.16);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
-  background-color: rgba(32, 32, 36, 0.95);
+  border-color: var(--color-border-strong);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.55);
+  background-color: var(--color-surface-hover);
 }
 
 /* TOP STATUS ACCENT STRIPE */
 .mg-metric-card__accent {
   height: 2px;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: var(--color-border-subtle);
   transition: opacity 0.2s ease;
 }
 
 .mg-metric-card--increase-risk .mg-metric-card__accent {
-  background: linear-gradient(90deg, #f97316, #ea580c);
+  background: linear-gradient(90deg, var(--color-high-risk), #EA580C);
 }
 
 .mg-metric-card--moderate-risk .mg-metric-card__accent {
-  background: linear-gradient(90deg, #f59e0b, #d97706);
+  background: linear-gradient(90deg, var(--color-warning), #D97706);
 }
 
 .mg-metric-card--good .mg-metric-card__accent {
-  background: linear-gradient(90deg, #10b981, #059669);
+  background: linear-gradient(90deg, var(--color-normal), #15803D);
 }
 
 .mg-metric-card--neutral .mg-metric-card__accent {
-  background: linear-gradient(90deg, #38bdf8, #0284c7);
+  background: linear-gradient(90deg, var(--color-cyan), #0284C7);
 }
 
 /* INNER CONTAINER */
@@ -60,11 +60,11 @@
 }
 
 .mg-metric-card__label {
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 600;
-  color: var(--color-text-muted, #a1a1aa);
+  color: var(--color-text-secondary);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: +0.05em;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -74,24 +74,24 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-text-muted, #71717a);
+  color: var(--color-text-muted);
   transition: color 0.15s ease;
 }
 
 .mg-metric-card:hover .mg-metric-card__icon-wrap {
-  color: var(--color-text-primary, #ffffff);
+  color: var(--color-text-primary);
 }
 
 .mg-metric-card--increase-risk .mg-metric-card__icon-wrap {
-  color: #f97316;
+  color: var(--color-high-risk);
 }
 
 .mg-metric-card--moderate-risk .mg-metric-card__icon-wrap {
-  color: #f59e0b;
+  color: var(--color-warning);
 }
 
 .mg-metric-card--good .mg-metric-card__icon-wrap {
-  color: #10b981;
+  color: var(--color-normal);
 }
 
 /* MAIN VALUE */
