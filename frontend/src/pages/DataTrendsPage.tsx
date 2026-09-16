@@ -45,7 +45,8 @@ export const DataTrendsPage: React.FC = () => {
 
   // Read initial node and parameter from URL search params if present
   const initialNodeId = searchParams.get('node') || 'N04';
-  const initialParam = (searchParams.get('param') as ParameterKey) || 'displacement';
+  const rawParam = searchParams.get('param');
+  const initialParam: ParameterKey = (rawParam && rawParam in PARAMETER_CONFIGS) ? (rawParam as ParameterKey) : 'displacement';
   const initialRange = (searchParams.get('range') as TimeRangeKey) || '24H';
 
   const [availableNodes, setAvailableNodes] = useState<MapNode[]>([]);
@@ -71,8 +72,8 @@ export const DataTrendsPage: React.FC = () => {
     'crackWidth',
   ]);
 
-  // Parameter configuration
-  const paramConfig = PARAMETER_CONFIGS[selectedParam];
+  // Parameter configuration with defensive fallback
+  const paramConfig = PARAMETER_CONFIGS[selectedParam] || PARAMETER_CONFIGS.displacement;
 
   // Load available nodes on mount
   useEffect(() => {

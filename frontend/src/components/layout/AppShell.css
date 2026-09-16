@@ -1,3 +1,8 @@
+/* ==========================================================================
+   APP SHELL — LAYOUT STRUCTURE
+   Two-column flex layout: fixed sidebar + Lenis-managed scrollable main
+   ========================================================================== */
+
 .mg-app-shell {
   display: flex;
   min-height: 100vh;
@@ -7,6 +12,9 @@
   overflow-x: hidden;
 }
 
+/* CRITICAL: scroll-behavior MUST be 'auto' so Lenis owns all scroll
+   interpolation. Setting 'smooth' here would cause double-interpolation
+   jitter (browser native + Lenis RAF loop fighting each other). */
 .mg-app-shell__main {
   flex: 1;
   display: flex;
@@ -14,10 +22,11 @@
   min-width: 0;
   height: 100vh;
   overflow-y: auto;
-  scroll-behavior: smooth;
+  scroll-behavior: auto !important;
   -webkit-overflow-scrolling: touch;
 }
 
+/* Sticky header stack: TopBar + EmergencyHazardBanner */
 .mg-app-shell__header-wrapper {
   position: sticky;
   top: 0;
@@ -27,9 +36,20 @@
   flex-direction: column;
 }
 
+/* Scrollable content region — Lenis mounts its content ref here */
 .mg-app-shell__content {
   flex: 1;
   display: flex;
   flex-direction: column;
   width: 100%;
+}
+
+/* Page motion wrapper — AnimatePresence keyed by pathname
+   Blur-glide page transition (design.md Section 5.2)
+   initial/animate/exit defined inline on motion.div */
+.mg-app-shell__page-motion {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
