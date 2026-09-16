@@ -1,61 +1,74 @@
 :root {
   /* ==========================================================================
-     BASE NEUTRAL PALETTE (Refined Obsidian & Warm Charcoal)
-     Comfortable, ergonomic dark mode with zero harshness or eye fatigue
+     BASE NEUTRAL PALETTE (Deep Obsidian & Mission-Control Charcoal)
+     Section 2 of design.md: Comfortable Obsidian & Glowing Gold Edition
      ========================================================================== */
-  --color-bg: #09090c;
-  --color-bg-alt: #0d0d12;
-  --color-bg-subtle: #111117;
+  --color-bg: #0B0F14;
+  --color-bg-alt: #0E141B;
+  --color-bg-subtle: #111720;
   
-  --color-surface: #121218;
-  --color-surface-hover: #181820;
-  --color-surface-elevated: #1e1e27;
+  --color-surface: #151A21;
+  --color-surface-hover: #1A222C;
+  --color-surface-elevated: #1E2733;
+  --color-surface-container: #151A21;
+  --color-surface-container-high: #18202A;
+  --color-surface-container-highest: #222D3B;
   
-  --color-border: #23232e;
-  --color-border-subtle: #171720;
-  --color-border-focus: #e5a93c;
+  --color-border: #222E3C;
+  --color-border-subtle: #17212C;
+  --color-border-strong: #33455A;
+  --color-border-focus: #F3CA68;
 
   /* ==========================================================================
-     TEXT TOKENS (Crisp, High-Legibility, Eye-Comfortable)
+     TEXT TOKENS (Crisp White-Gold Blend, Silver & Warm Gold)
      ========================================================================== */
-  --color-text-primary: #f4f4f7;
-  --color-text-secondary: #a0a0ab;
-  --color-text-muted: #6b6b77;
-  --color-text-inverse: #09090c;
-  --color-text-gold: #f3ca68;
+  --color-text-primary: #FFFDF8;
+  --color-text-gold: #F3CA68;
+  --color-text-secondary: #C5D1DE;
+  --color-text-tertiary: #7D8D9F;
+  --color-text-muted: #5A6777;
+  --color-text-inverse: #0B0F14;
 
   /* ==========================================================================
-     SAFETY & OPERATIONAL STATE TOKENS
+     TELEMETRY & ACTION ACCENTS (Cyan & Golden Luminescence)
      ========================================================================== */
-  --color-normal: #22c55e;
-  --color-normal-muted: rgba(34, 197, 94, 0.12);
-  --color-normal-border: rgba(34, 197, 94, 0.35);
-
-  --color-warning: #facc15;
-  --color-warning-muted: rgba(250, 204, 21, 0.12);
-  --color-warning-border: rgba(250, 204, 21, 0.35);
-
-  --color-high-risk: #f97316;
-  --color-high-risk-muted: rgba(249, 115, 22, 0.12);
-  --color-high-risk-border: rgba(249, 115, 22, 0.35);
-
-  --color-critical: #ef4444;
-  --color-critical-muted: rgba(239, 68, 68, 0.12);
-  --color-critical-border: rgba(239, 68, 68, 0.35);
-
-  --color-offline: #9ca3af;
-  --color-offline-muted: rgba(156, 163, 175, 0.10);
-  --color-offline-border: rgba(156, 163, 175, 0.25);
+  --color-cyan: #00C2FF;
+  --color-primary: #00C2FF;
+  --color-cyan-glow: rgba(0, 194, 255, 0.4);
+  --color-gold-glow: rgba(243, 202, 104, 0.45);
 
   /* ==========================================================================
-     GLOWING GOLDEN ACCENT (Comfortable Luxury Gold, Warm Champagne & Amber)
+     SAFETY & OPERATIONAL STATE TOKENS (Intuitive Traffic-Light System)
      ========================================================================== */
-  --color-info: #e5a93c;
-  --color-info-hover: #d49228;
-  --color-info-glow: #f3ca68;
-  --color-info-light: #fbf0d3;
-  --color-info-muted: rgba(229, 169, 60, 0.12);
-  --color-info-border: rgba(229, 169, 60, 0.32);
+  --color-normal: #30D158;
+  --color-normal-muted: rgba(48, 209, 88, 0.12);
+  --color-normal-border: rgba(48, 209, 88, 0.35);
+
+  --color-warning: #FFB020;
+  --color-warning-muted: rgba(255, 176, 32, 0.12);
+  --color-warning-border: rgba(255, 176, 32, 0.35);
+
+  --color-high-risk: #FF9500;
+  --color-high-risk-muted: rgba(255, 149, 0, 0.12);
+  --color-high-risk-border: rgba(255, 149, 0, 0.35);
+
+  --color-critical: #FF3B30;
+  --color-critical-muted: rgba(255, 59, 48, 0.14);
+  --color-critical-border: rgba(255, 59, 48, 0.45);
+
+  --color-offline: #8E8E93;
+  --color-offline-muted: rgba(142, 142, 147, 0.12);
+  --color-offline-border: rgba(142, 142, 147, 0.30);
+
+  /* ==========================================================================
+     GLOWING GOLDEN ACCENT (Warm Champagne & Gold Brand)
+     ========================================================================== */
+  --color-info: #F3CA68;
+  --color-info-hover: #E5A93C;
+  --color-info-glow: #F3CA68;
+  --color-info-light: #FFF4D9;
+  --color-info-muted: rgba(243, 202, 104, 0.14);
+  --color-info-border: rgba(243, 202, 104, 0.32);
 
   /* ==========================================================================
      SEMANTIC ALIASES

@@ -13,6 +13,7 @@ dependencies = [
     "alembic>=1.13.0",
     "psycopg[binary]>=3.1.0",
     "aiosqlite>=0.20.0",
+    "numpy>=1.26.0",
 ]
 
 [project.optional-dependencies]
@@ -22,7 +23,12 @@ dev = [
     "httpx>=0.27.0",
 ]
 
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["backend*"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["backend"]
 addopts = "-v --tb=short"
+

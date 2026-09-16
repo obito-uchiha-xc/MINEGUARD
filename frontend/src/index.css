@@ -10,17 +10,26 @@
 }
 
 html,
+body,
+.mg-app-shell__main {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+html,
 body {
   margin: 0;
   padding: 0;
   width: 100%;
   min-height: 100vh;
-  scroll-behavior: smooth;
-  background-color: #09090c;
+  background-color: var(--color-bg);
   background-image: 
-    radial-gradient(ellipse 65% 35% at 50% -5%, rgba(229, 169, 60, 0.08), transparent 70%),
-    radial-gradient(circle at 95% 95%, rgba(212, 146, 40, 0.04), transparent 45%),
-    linear-gradient(180deg, #09090c 0%, #0d0d12 50%, #09090c 100%);
+    radial-gradient(ellipse 65% 35% at 50% -5%, rgba(0, 194, 255, 0.05), transparent 70%),
+    radial-gradient(circle at 95% 95%, rgba(243, 202, 104, 0.04), transparent 45%),
+    linear-gradient(180deg, #0B0F14 0%, #0E141B 50%, #0B0F14 100%);
   background-attachment: fixed;
   color: var(--color-text-primary);
   font-family: var(--font-sans);
@@ -39,17 +48,20 @@ body {
   box-sizing: border-box;
 }
 
-/* CRISP, EYE-COMFORTABLE GOLD ACCENTS (NO BLURRY HALOS) */
-.text-gold-glow {
-  color: #f3ca68;
-  text-shadow: 0 0 10px rgba(243, 202, 104, 0.35);
-}
-
-.gold-gradient-text {
-  background: linear-gradient(135deg, #e5a93c 0%, #fef3c7 45%, #d49228 100%);
+/* ==========================================================================
+   GOLDEN BLENDED TYPOGRAPHY SYSTEM (Section 3 of design.md)
+   ========================================================================== */
+.gold-gradient-text,
+.text-gold-blend {
+  background: linear-gradient(180deg, #FFFFFF 15%, #FDF3DA 50%, #F3CA68 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 1px 4px rgba(229, 169, 60, 0.25));
+  filter: drop-shadow(0 0 10px rgba(243, 202, 104, 0.4));
+}
+
+.text-gold-glow {
+  color: #FFF4D9;
+  text-shadow: 0 0 12px rgba(243, 202, 104, 0.55), 0 0 2px rgba(255, 255, 255, 0.85);
 }
 
 /* HIGH DENSITY MONOSPACE TELEMETRY */
@@ -64,8 +76,8 @@ samp {
 
 /* SELECTION ACCENT */
 ::selection {
-  background-color: rgba(229, 169, 60, 0.3);
-  color: #ffffff;
+  background-color: rgba(243, 202, 104, 0.3);
+  color: #FFFFFF;
 }
 
 /* SUBTLE HOVER GLOW */
@@ -74,8 +86,8 @@ samp {
 }
 
 .glow-on-hover:hover {
-  border-color: rgba(229, 169, 60, 0.4);
-  box-shadow: 0 0 14px rgba(229, 169, 60, 0.18);
+  border-color: rgba(243, 202, 104, 0.4);
+  box-shadow: 0 0 14px rgba(243, 202, 104, 0.2);
 }
 
 /* CUSTOM COMFORTABLE SCROLLBAR */
@@ -85,22 +97,23 @@ samp {
 }
 
 ::-webkit-scrollbar-track {
-  background: #09090c;
+  background: #0B0F14;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1e1e28;
-  border: 1px solid rgba(229, 169, 60, 0.15);
+  background: #1E2733;
+  border: 1px solid rgba(243, 202, 104, 0.18);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #d49228;
-  box-shadow: 0 0 8px rgba(229, 169, 60, 0.3);
+  background: #F3CA68;
+  box-shadow: 0 0 8px rgba(243, 202, 104, 0.4);
 }
 
 /* RESTRAINED FOCUS RING */
 :focus-visible {
-  outline: 2px solid #e5a93c;
+  outline: 2px solid var(--color-cyan);
   outline-offset: 2px;
 }
+

@@ -37,9 +37,18 @@
 }
 
 .mg-node-summary-card.is-selected {
-  background-color: var(--color-surface-container-highest);
-  border-color: var(--color-primary);
-  box-shadow: 0 0 12px rgba(22, 163, 74, 0.15);
+  background-color: var(--color-surface-hover);
+  border-color: var(--color-border-strong);
+}
+
+.mg-node-summary-card__selected-ring {
+  position: absolute;
+  inset: -1px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid #F3CA68;
+  box-shadow: 0 0 16px rgba(243, 202, 104, 0.4), inset 0 0 8px rgba(243, 202, 104, 0.12);
+  pointer-events: none;
+  z-index: 10;
 }
 
 /* Status-specific highlight bars */

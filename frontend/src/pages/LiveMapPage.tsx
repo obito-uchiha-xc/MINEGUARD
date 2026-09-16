@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 import { PageContainer } from '../components/layout/PageContainer';
 import { PageHeader } from '../components/layout/PageHeader';
 import { StatusIndicator } from '../components/ui/StatusIndicator';
@@ -304,15 +305,24 @@ export const LiveMapPage: React.FC = () => {
             />
           </div>
 
-          {/* RIGHT / FLOATING NODE DETAILS PANEL */}
-          {selectedNode && (
-            <div className="mg-live-map-page__panel-wrapper">
-              <NodeDetailsPanel
-                node={selectedNode}
-                onClose={() => setSelectedNodeId(null)}
-              />
-            </div>
-          )}
+          {/* RIGHT / FLOATING NODE DETAILS PANEL WITH ENTRANCE ANIMATION */}
+          <AnimatePresence>
+            {selectedNode && (
+              <motion.div
+                key={selectedNode.id}
+                className="mg-live-map-page__panel-wrapper"
+                initial={{ opacity: 0, scale: 0.92, y: 8 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.92, y: 8 }}
+                transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <NodeDetailsPanel
+                  node={selectedNode}
+                  onClose={() => setSelectedNodeId(null)}
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
 
         {/* BOTTOM MAP LEGEND */}

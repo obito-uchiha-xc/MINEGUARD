@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Cpu, Wifi, AlertTriangle, Flame, AlertOctagon, WifiOff } from 'lucide-react';
 import type { MapNode } from '../../data/mock/nodes';
 import './NodeSummaryCards.css';
@@ -78,7 +79,7 @@ export const NodeSummaryCards: React.FC<NodeSummaryCardsProps> = ({
       {cards.map((card) => {
         const isSelected = activeFilter === card.id;
         return (
-          <button
+          <motion.button
             key={card.id}
             type="button"
             className={`mg-node-summary-card mg-node-summary-card--${card.colorClass} ${
@@ -87,7 +88,17 @@ export const NodeSummaryCards: React.FC<NodeSummaryCardsProps> = ({
             onClick={() => onSelectFilter(isSelected ? 'ALL' : card.id)}
             aria-pressed={isSelected}
             aria-label={`${card.title}: ${card.value} nodes. Click to filter.`}
+            whileHover={{ y: -2.5, transition: { duration: 0.15 } }}
+            whileTap={{ scale: 0.98 }}
           >
+            {isSelected && (
+              <motion.div
+                layoutId="nodeSummaryCardSelected"
+                className="mg-node-summary-card__selected-ring"
+                transition={{ type: 'spring', stiffness: 450, damping: 32 }}
+                aria-hidden="true"
+              />
+            )}
             <div className="mg-node-summary-card__header">
               <span className="mg-node-summary-card__title">{card.title}</span>
               <span className="mg-node-summary-card__icon">{card.icon}</span>
@@ -96,7 +107,7 @@ export const NodeSummaryCards: React.FC<NodeSummaryCardsProps> = ({
               <span className="mg-node-summary-card__value mono-telemetry">{card.value}</span>
               <span className="mg-node-summary-card__subtext">{card.subtext}</span>
             </div>
-          </button>
+          </motion.button>
         );
       })}
     </div>

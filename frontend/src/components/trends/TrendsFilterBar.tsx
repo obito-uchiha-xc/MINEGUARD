@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Download, RefreshCw, Layers } from 'lucide-react';
 import { Select } from '../ui/Select';
 import { Button } from '../ui/Button';
@@ -117,20 +118,29 @@ export const TrendsFilterBar: React.FC<TrendsFilterBarProps> = ({
         <div className="mg-trends-filter-bar__group mg-trends-filter-bar__group--time">
           <span className="mg-trends-filter-label">Time Horizon</span>
           <div className="mg-trends-time-tabs" role="tablist" aria-label="Analysis Time Range">
-            {timeRanges.map((range) => (
-              <button
-                key={range}
-                type="button"
-                role="tab"
-                aria-selected={selectedTimeRange === range}
-                className={`mg-trends-time-tab ${
-                  selectedTimeRange === range ? 'is-active' : ''
-                }`}
-                onClick={() => onSelectTimeRange(range)}
-              >
-                {range}
-              </button>
-            ))}
+            {timeRanges.map((range) => {
+              const isActive = selectedTimeRange === range;
+              return (
+                <button
+                  key={range}
+                  type="button"
+                  role="tab"
+                  aria-selected={isActive}
+                  className={`mg-trends-time-tab ${isActive ? 'is-active' : ''}`}
+                  onClick={() => onSelectTimeRange(range)}
+                >
+                  {isActive && (
+                    <motion.span
+                      layoutId="trendsTimeTabActive"
+                      className="mg-trends-time-tab__active-bg"
+                      transition={{ type: 'spring', stiffness: 450, damping: 32 }}
+                      aria-hidden="true"
+                    />
+                  )}
+                  <span className="mg-trends-time-tab__label">{range}</span>
+                </button>
+              );
+            })}
           </div>
         </div>
 

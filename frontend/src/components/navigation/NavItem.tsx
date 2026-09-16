@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { Badge } from '../ui/Badge';
 import { Tooltip } from '../ui/Tooltip';
 import type { NavItemConfig } from '../../types/navigation';
@@ -25,24 +26,37 @@ export const NavItem: React.FC<NavItemProps> = ({
       }
       aria-label={item.label}
     >
-      <span className="mg-nav-item__icon" aria-hidden="true">
-        {item.icon}
-      </span>
-
-      {!isCollapsed && (
-        <span className="mg-nav-item__label">{item.label}</span>
-      )}
-
-      {item.badgeCount !== undefined && item.badgeCount > 0 && (
-        <span className="mg-nav-item__badge-wrap">
-          {isCollapsed ? (
-            <span className="mg-nav-item__badge-dot" aria-label={`${item.badgeCount} unread`} />
-          ) : (
-            <Badge variant={item.badgeVariant || 'critical'}>
-              {item.badgeCount}
-            </Badge>
+      {({ isActive }) => (
+        <>
+          {isActive && (
+            <motion.span
+              layoutId="sidebarActiveSelection"
+              className="mg-nav-item__active-pill"
+              transition={{ type: 'spring', stiffness: 450, damping: 34 }}
+              aria-hidden="true"
+            />
           )}
-        </span>
+
+          <span className="mg-nav-item__icon" aria-hidden="true">
+            {item.icon}
+          </span>
+
+          {!isCollapsed && (
+            <span className="mg-nav-item__label">{item.label}</span>
+          )}
+
+          {item.badgeCount !== undefined && item.badgeCount > 0 && (
+            <span className="mg-nav-item__badge-wrap">
+              {isCollapsed ? (
+                <span className="mg-nav-item__badge-dot" aria-label={`${item.badgeCount} unread`} />
+              ) : (
+                <Badge variant={item.badgeVariant || 'critical'}>
+                  {item.badgeCount}
+                </Badge>
+              )}
+            </span>
+          )}
+        </>
       )}
     </NavLink>
   );

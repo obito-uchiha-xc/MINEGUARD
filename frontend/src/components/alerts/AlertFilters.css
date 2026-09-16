@@ -54,15 +54,20 @@
 }
 
 .mg-quick-tab {
+  position: relative;
   background-color: transparent;
   border: none;
   font-size: 11px;
   font-weight: var(--font-weight-medium);
   color: var(--color-text-tertiary);
-  padding: 3px 8px;
+  padding: 4px 10px;
   border-radius: var(--radius-xs);
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: color var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
 }
 
 .mg-quick-tab:hover {
@@ -70,10 +75,24 @@
 }
 
 .mg-quick-tab.is-active {
-  background-color: var(--color-surface-container-highest);
-  color: var(--color-primary);
-  font-weight: var(--font-weight-bold);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+.mg-quick-tab__active-bg {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-xs);
+  background: linear-gradient(180deg, rgba(243, 202, 104, 0.22) 0%, rgba(243, 202, 104, 0.08) 100%);
+  border: 1px solid rgba(243, 202, 104, 0.45);
+  box-shadow: 0 0 10px rgba(243, 202, 104, 0.25), inset 0 0 6px rgba(243, 202, 104, 0.1);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.mg-quick-tab__label {
+  position: relative;
+  z-index: 1;
 }
 
 .mg-alert-match-count {

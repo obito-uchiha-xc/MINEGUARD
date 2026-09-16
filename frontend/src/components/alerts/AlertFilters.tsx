@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Search, RotateCcw } from 'lucide-react';
 import { Input } from '../ui/Input';
 import { Select, type SelectOption } from '../ui/Select';
@@ -159,48 +160,35 @@ export const AlertFilters: React.FC<AlertFiltersProps> = ({
       {/* STATUS TABS & MATCH COUNTER */}
       <div className="mg-alert-filters__status-bar">
         <div className="mg-alert-quick-tabs">
-          <button
-            type="button"
-            className={`mg-quick-tab ${filters.status === 'ALL' ? 'is-active' : ''}`}
-            onClick={() => onFilterChange({ status: 'ALL' })}
-          >
-            All Alerts ({totalAlerts})
-          </button>
-          <button
-            type="button"
-            className={`mg-quick-tab ${filters.status === 'UNRESOLVED' ? 'is-active' : ''}`}
-            onClick={() => onFilterChange({ status: 'UNRESOLVED' })}
-          >
-            Unresolved
-          </button>
-          <button
-            type="button"
-            className={`mg-quick-tab ${filters.status === 'NEW' ? 'is-active' : ''}`}
-            onClick={() => onFilterChange({ status: 'NEW' })}
-          >
-            New
-          </button>
-          <button
-            type="button"
-            className={`mg-quick-tab ${filters.status === 'INVESTIGATING' ? 'is-active' : ''}`}
-            onClick={() => onFilterChange({ status: 'INVESTIGATING' })}
-          >
-            Investigating
-          </button>
-          <button
-            type="button"
-            className={`mg-quick-tab ${filters.status === 'ACKNOWLEDGED' ? 'is-active' : ''}`}
-            onClick={() => onFilterChange({ status: 'ACKNOWLEDGED' })}
-          >
-            Acknowledged
-          </button>
-          <button
-            type="button"
-            className={`mg-quick-tab ${filters.status === 'RESOLVED' ? 'is-active' : ''}`}
-            onClick={() => onFilterChange({ status: 'RESOLVED' })}
-          >
-            Resolved
-          </button>
+          {[
+            { key: 'ALL', label: `All Alerts (${totalAlerts})` },
+            { key: 'UNRESOLVED', label: 'Unresolved' },
+            { key: 'NEW', label: 'New' },
+            { key: 'INVESTIGATING', label: 'Investigating' },
+            { key: 'ACKNOWLEDGED', label: 'Acknowledged' },
+            { key: 'RESOLVED', label: 'Resolved' },
+          ].map((tab) => {
+            const isActive = filters.status === tab.key;
+            return (
+              <button
+                key={tab.key}
+                type="button"
+                className={`mg-quick-tab ${isActive ? 'is-active' : ''}`}
+                onClick={() => onFilterChange({ status: tab.key as AlertOperationalStatus | 'ALL' | 'UNRESOLVED' })}
+                aria-pressed={isActive}
+              >
+                {isActive && (
+                  <motion.span
+                    layoutId="alertQuickTabActive"
+                    className="mg-quick-tab__active-bg"
+                    transition={{ type: 'spring', stiffness: 450, damping: 32 }}
+                    aria-hidden="true"
+                  />
+                )}
+                <span className="mg-quick-tab__label">{tab.label}</span>
+              </button>
+            );
+          })}
         </div>
 
         <span className="mg-alert-match-count">

@@ -19,17 +19,18 @@ export const LandingPage: React.FC = () => {
   // Initialize smooth momentum scrolling for the landing page
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.15,
+      duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
-      wheelMultiplier: 0.95,
-      touchMultiplier: 1.5,
+      wheelMultiplier: 1.05,
+      touchMultiplier: 1.6,
       infinite: false,
     });
 
     lenisRef.current = lenis;
+    (window as unknown as { __lenis: Lenis | null }).__lenis = lenis;
 
     let rafId: number;
     function raf(time: number) {
@@ -45,6 +46,7 @@ export const LandingPage: React.FC = () => {
       cancelAnimationFrame(rafId);
       lenis.destroy();
       lenisRef.current = null;
+      (window as unknown as { __lenis: Lenis | null }).__lenis = null;
     };
   }, []);
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { AlertOctagon, Flame, AlertTriangle, CheckCircle2, Clock } from 'lucide-react';
 import type { MineAlert } from '../../data/mock/alertsCenter';
 import './AlertSummaryCards.css';
@@ -69,7 +70,7 @@ export const AlertSummaryCards: React.FC<AlertSummaryCardsProps> = ({
       {cards.map((c) => {
         const isSelected = activeFilter === c.id;
         return (
-          <button
+          <motion.button
             key={c.id}
             type="button"
             className={`mg-alert-summary-card mg-alert-summary-card--${c.colorClass} ${
@@ -78,7 +79,17 @@ export const AlertSummaryCards: React.FC<AlertSummaryCardsProps> = ({
             onClick={() => onSelectFilter(isSelected ? 'ALL' : c.id)}
             aria-pressed={isSelected}
             aria-label={`${c.title}: ${c.count} alerts. Click to filter.`}
+            whileHover={{ y: -2.5, transition: { duration: 0.15 } }}
+            whileTap={{ scale: 0.98 }}
           >
+            {isSelected && (
+              <motion.div
+                layoutId="alertSummaryCardSelected"
+                className="mg-alert-summary-card__selected-ring"
+                transition={{ type: 'spring', stiffness: 450, damping: 32 }}
+                aria-hidden="true"
+              />
+            )}
             <div className="mg-alert-summary-card__header">
               <span className="mg-alert-summary-card__title">{c.title}</span>
               <span className="mg-alert-summary-card__icon">{c.icon}</span>
@@ -89,7 +100,7 @@ export const AlertSummaryCards: React.FC<AlertSummaryCardsProps> = ({
               </span>
               <span className="mg-alert-summary-card__subtext">{c.subtext}</span>
             </div>
-          </button>
+          </motion.button>
         );
       })}
     </div>

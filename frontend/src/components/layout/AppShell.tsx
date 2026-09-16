@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 import Lenis from 'lenis';
 import 'lenis/dist/lenis.css';
 import { Sidebar } from './Sidebar';
@@ -21,20 +22,20 @@ export const AppShell: React.FC<AppShellProps> = ({ children }) => {
   const lenisRef = useRef<Lenis | null>(null);
   const location = useLocation();
 
-  // Initialize buttery-smooth momentum scrolling (Lenis)
+  // Initialize buttery-smooth momentum scrolling (Lenis) per design.md Section 4
   useEffect(() => {
     if (!mainRef.current || !contentRef.current) return;
 
     const lenis = new Lenis({
       wrapper: mainRef.current,
       content: contentRef.current,
-      duration: 1.15,
+      duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
-      wheelMultiplier: 0.95,
-      touchMultiplier: 1.5,
+      wheelMultiplier: 1.05,
+      touchMultiplier: 1.6,
       infinite: false,
     });
 
@@ -99,9 +100,20 @@ export const AppShell: React.FC<AppShellProps> = ({ children }) => {
           <EmergencyHazardBanner />
         </div>
 
-        {/* SCROLLABLE PAGE CONTENT */}
+        {/* SCROLLABLE PAGE CONTENT WITH PAGE-TO-PAGE CHOOSING TRANSITIONS */}
         <div className="mg-app-shell__content" ref={contentRef}>
-          {children}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={location.pathname}
+              initial={{ opacity: 0, y: 10, filter: 'blur(3px)' }}
+              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              exit={{ opacity: 0, y: -10, filter: 'blur(3px)' }}
+              transition={{ duration: 0.24, ease: [0.22, 1, 0.36, 1] }}
+              className="mg-app-shell__page-motion"
+            >
+              {children}
+            </motion.div>
+          </AnimatePresence>
         </div>
 
         {/* PERSISTENT FOOTER */}

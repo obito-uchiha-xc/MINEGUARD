@@ -1,4 +1,5 @@
 import React, { useState, useRef, useCallback } from 'react';
+import { motion } from 'framer-motion';
 import type { MapNode } from '../../data/mock/nodes';
 import type { SafetyStatus } from '../../types/safety';
 import type { MapLayerState } from './MapToolbar';
@@ -327,7 +328,7 @@ export const InteractiveMineCanvas: React.FC<InteractiveMineCanvasProps> = ({
               const isHighRisk = node.status === 'HIGH_RISK';
 
               return (
-                <button
+                <motion.button
                   key={node.id}
                   type="button"
                   className={`mg-gis-node-pin mg-gis-node-pin--${node.status.toLowerCase()} ${
@@ -337,6 +338,9 @@ export const InteractiveMineCanvas: React.FC<InteractiveMineCanvasProps> = ({
                     left: `${node.xPct}%`,
                     top: `${node.yPct}%`,
                   }}
+                  whileHover={{ scale: 1.18 }}
+                  whileTap={{ scale: 0.9 }}
+                  transition={{ duration: 0.15 }}
                   onClick={(e) => {
                     e.stopPropagation();
                     onSelectNode(node);
@@ -357,7 +361,7 @@ export const InteractiveMineCanvas: React.FC<InteractiveMineCanvasProps> = ({
 
                   {/* Compact Label */}
                   <span className="mg-gis-node-pin__label mono-telemetry">{node.id}</span>
-                </button>
+                </motion.button>
               );
             })}
           </div>

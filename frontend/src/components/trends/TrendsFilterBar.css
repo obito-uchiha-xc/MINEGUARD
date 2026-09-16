@@ -58,6 +58,7 @@
 }
 
 .mg-trends-time-tab {
+  position: relative;
   background-color: transparent;
   border: none;
   font-size: var(--font-size-xs);
@@ -67,7 +68,11 @@
   height: 28px;
   border-radius: var(--radius-xs);
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: color var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
 }
 
 .mg-trends-time-tab:hover {
@@ -75,10 +80,24 @@
 }
 
 .mg-trends-time-tab.is-active {
-  background-color: var(--color-surface-container-highest);
-  color: var(--color-primary);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
-  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  font-weight: 700;
+}
+
+.mg-trends-time-tab__active-bg {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-xs);
+  background: linear-gradient(180deg, rgba(243, 202, 104, 0.22) 0%, rgba(243, 202, 104, 0.08) 100%);
+  border: 1px solid rgba(243, 202, 104, 0.45);
+  box-shadow: 0 0 10px rgba(243, 202, 104, 0.25), inset 0 0 6px rgba(243, 202, 104, 0.1);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.mg-trends-time-tab__label {
+  position: relative;
+  z-index: 1;
 }
 
 .mg-trends-filter-bar__actions {
