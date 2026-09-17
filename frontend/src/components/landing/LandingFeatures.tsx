@@ -7,6 +7,8 @@ import {
   BellRing,
   ArrowUpRight,
   Pickaxe,
+  Brain,
+  FileText,
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import './LandingFeatures.css';
@@ -96,49 +98,80 @@ export const LandingFeatures: React.FC = () => {
       ],
       linkText: 'Open TARP Response Center',
     },
+    {
+      id: 'analytics',
+      title: 'Predictive Geohazard AI & Kinematic Models',
+      route: '/analytics',
+      icon: <Brain size={24} className="text-gold-glow" />,
+      tag: 'PREDICTIVE AI INFERENCE',
+      description:
+        'Multi-model ML inference running continuous anomaly detection, Fourier transform vibration analysis, and slip-surface shear predictions prior to observable slope failure.',
+      highlights: [
+        'Multi-model ensemble (Isolation Forest, LSTM Velocity, Autoencoder)',
+        'Ambient blast vibration vs. structural shear discriminators',
+        'Zone-by-zone geotechnical risk scoring and hazard classification',
+      ],
+      linkText: 'Launch Geohazard AI Engine',
+    },
+    {
+      id: 'reports',
+      title: 'Statutory DGMS Compliance & Shift Handover Logs',
+      route: '/reports',
+      icon: <FileText size={24} className="text-gold-glow" />,
+      tag: 'STATUTORY COMPLIANCE & AUDIT',
+      description:
+        'Audit-ready geotechnical shift handover dossiers, DGMS statutory compliance exports, and incident investigation logs with cryptographic chain-of-custody tracking.',
+      highlights: [
+        'Automated end-of-shift geotechnical handover log generation',
+        'Statutory compliance exports formatted to DGMS circular standards',
+        'Digital signature workflows with auditable supervisory sign-offs',
+      ],
+      linkText: 'Access Statutory Reports',
+    },
   ];
 
   return (
     <section className="mg-landing-features" id="capabilities">
       <div className="mg-landing-features__container">
+        <div className="mg-landing-features__header">
+          <motion.div className="mg-landing-features__eyebrow" {...fadeUpSoft(0)}>
+            <Pickaxe size={15} className="text-gold-glow" />
+            <span>MINE SAFETY ARCHITECTURE</span>
+          </motion.div>
 
-        <motion.div className="mg-landing-features__eyebrow" {...fadeUpSoft(0)}>
-          <Pickaxe size={15} className="text-gold-glow" />
-          <span>MINE SAFETY ARCHITECTURE</span>
-        </motion.div>
+          <motion.h2 className="mg-landing-features__title" {...fadeUp(0.08)}>
+            Engineered Mining Geotechnical Systems
+          </motion.h2>
 
-        <motion.h2 className="mg-landing-features__title" {...fadeUp(0.08)}>
-          Engineered Mining Geotechnical Systems
-        </motion.h2>
-
-        <motion.p className="mg-landing-features__subtitle" {...fadeUpSoft(0.18)}>
-          An integrated, fail-safe monitoring suite built for chief geotechnical engineers,
-          pit superintendents, and control-room shift supervisors.
-        </motion.p>
+          <motion.p className="mg-landing-features__subtitle" {...fadeUpSoft(0.18)}>
+            An integrated, fail-safe monitoring suite built for chief geotechnical engineers,
+            pit superintendents, and control-room shift supervisors.
+          </motion.p>
+        </div>
 
         <div className="mg-landing-features__grid">
           {systems.map((s, idx) => (
             <motion.div
               key={s.id}
               className="mg-feature-card"
-              {...fadeUp(idx * 0.13)}
+              {...fadeUp((idx % 3) * 0.12 + Math.floor(idx / 3) * 0.08)}
               whileHover={{ y: -6, scale: 1.02, transition: { duration: 0.25 } }}
             >
-              <motion.div className="mg-feature-card__top" {...fadeUpSoft(idx * 0.13 + 0.08)}>
+              <motion.div className="mg-feature-card__top" {...fadeUpSoft((idx % 3) * 0.12 + 0.08)}>
                 <div className="mg-feature-card__icon-box">{s.icon}</div>
                 <span className="mg-feature-card__tag">{s.tag}</span>
               </motion.div>
 
               <motion.h3
                 className="mg-feature-card__title"
-                {...fadeUp(idx * 0.13 + 0.13)}
+                {...fadeUp((idx % 3) * 0.12 + 0.13)}
               >
                 {s.title}
               </motion.h3>
 
               <motion.p
                 className="mg-feature-card__desc"
-                {...fadeUpSoft(idx * 0.13 + 0.18)}
+                {...fadeUpSoft((idx % 3) * 0.12 + 0.18)}
               >
                 {s.description}
               </motion.p>
@@ -148,7 +181,7 @@ export const LandingFeatures: React.FC = () => {
                   <motion.li
                     key={i}
                     className="mg-feature-card__bullet-item"
-                    {...fadeUpSoft(idx * 0.13 + 0.22 + i * 0.07)}
+                    {...fadeUpSoft((idx % 3) * 0.12 + 0.22 + i * 0.06)}
                   >
                     <span className="mg-feature-card__bullet-dot" />
                     <span>{h}</span>
@@ -158,7 +191,7 @@ export const LandingFeatures: React.FC = () => {
 
               <motion.div
                 className="mg-feature-card__footer"
-                {...fadeUpSoft(idx * 0.13 + 0.38)}
+                {...fadeUpSoft((idx % 3) * 0.12 + 0.38)}
               >
                 <Link to={s.route} className="mg-feature-card__cta">
                   <span>{s.linkText}</span>
