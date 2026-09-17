@@ -1,5 +1,6 @@
 import React from 'react';
 import { Target, Activity, ShieldAlert, Mountain } from 'lucide-react';
+import { motion } from 'framer-motion';
 import './LandingStats.css';
 
 export const LandingStats: React.FC = () => {
@@ -35,14 +36,26 @@ export const LandingStats: React.FC = () => {
       <div className="mg-landing-stats__container">
         <div className="mg-landing-stats__grid">
           {stats.map((stat, idx) => (
-            <div key={idx} className="mg-landing-stats__card">
+            <motion.div
+              key={idx}
+              className="mg-landing-stats__card"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{
+                duration: 0.55,
+                delay: idx * 0.12,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+              whileHover={{ y: -4, transition: { duration: 0.2 } }}
+            >
               <div className="mg-landing-stats__icon-box">{stat.icon}</div>
               <div className="mg-landing-stats__val text-gold-glow mono-telemetry">
                 {stat.value}
               </div>
               <div className="mg-landing-stats__label">{stat.label}</div>
               <p className="mg-landing-stats__desc">{stat.desc}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

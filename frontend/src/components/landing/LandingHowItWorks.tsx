@@ -1,5 +1,6 @@
 import React from 'react';
 import { Shield, AlertCircle, AlertTriangle, AlertOctagon, CheckCircle2 } from 'lucide-react';
+import { motion } from 'framer-motion';
 import './LandingHowItWorks.css';
 
 export const LandingHowItWorks: React.FC = () => {
@@ -61,7 +62,13 @@ export const LandingHowItWorks: React.FC = () => {
   return (
     <section className="mg-landing-how" id="tarp">
       <div className="mg-landing-how__container">
-        <div className="mg-landing-how__header">
+        <motion.div
+          className="mg-landing-how__header"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-50px' }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+        >
           <div className="mg-landing-how__eyebrow">
             <span>OPERATIONAL SAFETY PROTOCOL</span>
           </div>
@@ -72,11 +79,23 @@ export const LandingHowItWorks: React.FC = () => {
             MineGuard executes standardized, non-alarmist geotechnical TARP frameworks to translate
             raw millimetric deformation into unambiguous, audited mining safety actions.
           </p>
-        </div>
+        </motion.div>
 
         <div className="mg-landing-how__grid">
-          {tarpLevels.map((t) => (
-            <div key={t.level} className="mg-tarp-card">
+          {tarpLevels.map((t, idx) => (
+            <motion.div
+              key={t.level}
+              className="mg-tarp-card"
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{
+                duration: 0.6,
+                delay: idx * 0.12,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+              whileHover={{ y: -4, transition: { duration: 0.2 } }}
+            >
               <div className="mg-tarp-card__top">
                 <span className={`mg-tarp-badge ${t.badgeClass}`}>{t.level}</span>
                 <div className="mg-tarp-card__icon">{t.icon}</div>
@@ -94,7 +113,7 @@ export const LandingHowItWorks: React.FC = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

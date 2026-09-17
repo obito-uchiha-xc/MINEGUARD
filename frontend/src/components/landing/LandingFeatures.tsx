@@ -8,6 +8,7 @@ import {
   ArrowUpRight,
   Pickaxe,
 } from 'lucide-react';
+import { motion } from 'framer-motion';
 import './LandingFeatures.css';
 
 export const LandingFeatures: React.FC = () => {
@@ -78,7 +79,13 @@ export const LandingFeatures: React.FC = () => {
     <section className="mg-landing-features" id="capabilities">
       <div className="mg-landing-features__container">
         {/* Industrial Section Header */}
-        <div className="mg-landing-features__header">
+        <motion.div
+          className="mg-landing-features__header"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-50px' }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+        >
           <div className="mg-landing-features__eyebrow">
             <Pickaxe size={15} className="text-gold-glow" />
             <span>MINE SAFETY ARCHITECTURE</span>
@@ -90,12 +97,24 @@ export const LandingFeatures: React.FC = () => {
             An integrated, fail-safe monitoring suite built for chief geotechnical engineers,
             pit superintendents, and control-room shift supervisors.
           </p>
-        </div>
+        </motion.div>
 
         {/* 2x2 Feature Grid */}
         <div className="mg-landing-features__grid">
-          {systems.map((s) => (
-            <div key={s.id} className="mg-feature-card">
+          {systems.map((s, idx) => (
+            <motion.div
+              key={s.id}
+              className="mg-feature-card"
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{
+                duration: 0.6,
+                delay: idx * 0.12,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+              whileHover={{ y: -4, transition: { duration: 0.2 } }}
+            >
               <div className="mg-feature-card__top">
                 <div className="mg-feature-card__icon-box">{s.icon}</div>
                 <span className="mg-feature-card__tag">{s.tag}</span>
@@ -119,7 +138,7 @@ export const LandingFeatures: React.FC = () => {
                   <ArrowUpRight size={17} />
                 </Link>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
