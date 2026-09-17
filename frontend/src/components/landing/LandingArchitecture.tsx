@@ -3,6 +3,28 @@ import { ShieldCheck, HardHat, Cpu, Radio, BatteryCharging, FileCheck } from 'lu
 import { motion } from 'framer-motion';
 import './LandingArchitecture.css';
 
+const fadeUp = (delay = 0) => ({
+  initial: { opacity: 0, y: 40, scale: 0.96, filter: 'blur(6px)' },
+  whileInView: { opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' },
+  viewport: { once: false, margin: '-40px' },
+  transition: {
+    duration: 0.75,
+    delay,
+    ease: [0.22, 1, 0.36, 1] as const,
+  },
+});
+
+const fadeUpSoft = (delay = 0) => ({
+  initial: { opacity: 0, y: 20, filter: 'blur(3px)' },
+  whileInView: { opacity: 1, y: 0, filter: 'blur(0px)' },
+  viewport: { once: false, margin: '-40px' },
+  transition: {
+    duration: 0.6,
+    delay,
+    ease: [0.22, 1, 0.36, 1] as const,
+  },
+});
+
 export const LandingArchitecture: React.FC = () => {
   const specs = [
     {
@@ -40,43 +62,48 @@ export const LandingArchitecture: React.FC = () => {
   return (
     <section className="mg-landing-arch" id="hardware">
       <div className="mg-landing-arch__container">
-        <motion.div
-          className="mg-landing-arch__header"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-50px' }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <div className="mg-landing-arch__eyebrow">
-            <span>INDUSTRIAL RIGOR</span>
-          </div>
-          <h2 className="mg-landing-arch__title">
-            Engineered for Extreme Mining Environments
-          </h2>
-          <p className="mg-landing-arch__subtitle">
-            Every MineGuard sensor node and mesh gateway is certified to withstand explosive dust,
-            heavy blast vibrations, acid water, and extreme subterranean temperatures.
-          </p>
+
+        <motion.div className="mg-landing-arch__eyebrow" {...fadeUpSoft(0)}>
+          <span>INDUSTRIAL RIGOR</span>
         </motion.div>
+
+        <motion.h2 className="mg-landing-arch__title" {...fadeUp(0.08)}>
+          Engineered for Extreme Mining Environments
+        </motion.h2>
+
+        <motion.p className="mg-landing-arch__subtitle" {...fadeUpSoft(0.18)}>
+          Every MineGuard sensor node and mesh gateway is certified to withstand explosive dust,
+          heavy blast vibrations, acid water, and extreme subterranean temperatures.
+        </motion.p>
 
         <div className="mg-landing-arch__grid">
           {specs.map((s, idx) => (
             <motion.div
               key={idx}
               className="mg-arch-card"
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{
-                duration: 0.6,
-                delay: idx * 0.1,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-              whileHover={{ y: -4, transition: { duration: 0.2 } }}
+              {...fadeUp(idx * 0.11)}
+              whileHover={{ y: -6, scale: 1.02, transition: { duration: 0.25 } }}
             >
-              <div className="mg-arch-card__icon">{s.icon}</div>
-              <h3 className="mg-arch-card__title">{s.title}</h3>
-              <p className="mg-arch-card__desc">{s.desc}</p>
+              <motion.div
+                className="mg-arch-card__icon"
+                {...fadeUpSoft(idx * 0.11 + 0.08)}
+              >
+                {s.icon}
+              </motion.div>
+
+              <motion.h3
+                className="mg-arch-card__title"
+                {...fadeUp(idx * 0.11 + 0.12)}
+              >
+                {s.title}
+              </motion.h3>
+
+              <motion.p
+                className="mg-arch-card__desc"
+                {...fadeUpSoft(idx * 0.11 + 0.17)}
+              >
+                {s.desc}
+              </motion.p>
             </motion.div>
           ))}
         </div>

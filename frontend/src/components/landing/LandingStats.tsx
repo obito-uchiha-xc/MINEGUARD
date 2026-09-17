@@ -3,6 +3,18 @@ import { Target, Activity, ShieldAlert, Mountain } from 'lucide-react';
 import { motion } from 'framer-motion';
 import './LandingStats.css';
 
+// Premium smooth entrance: blur + scale + float up
+const fadeUp = (delay = 0) => ({
+  initial: { opacity: 0, y: 40, scale: 0.96, filter: 'blur(6px)' },
+  whileInView: { opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' },
+  viewport: { once: false, margin: '-40px' },
+  transition: {
+    duration: 0.75,
+    delay,
+    ease: [0.22, 1, 0.36, 1] as const,
+  },
+});
+
 export const LandingStats: React.FC = () => {
   const stats = [
     {
@@ -39,22 +51,36 @@ export const LandingStats: React.FC = () => {
             <motion.div
               key={idx}
               className="mg-landing-stats__card"
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{
-                duration: 0.55,
-                delay: idx * 0.12,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-              whileHover={{ y: -4, transition: { duration: 0.2 } }}
+              {...fadeUp(idx * 0.13)}
+              whileHover={{ y: -6, scale: 1.02, transition: { duration: 0.25 } }}
             >
-              <div className="mg-landing-stats__icon-box">{stat.icon}</div>
-              <div className="mg-landing-stats__val text-gold-glow mono-telemetry">
+              <motion.div
+                className="mg-landing-stats__icon-box"
+                {...fadeUp(idx * 0.13 + 0.08)}
+              >
+                {stat.icon}
+              </motion.div>
+
+              <motion.div
+                className="mg-landing-stats__val text-gold-glow mono-telemetry"
+                {...fadeUp(idx * 0.13 + 0.13)}
+              >
                 {stat.value}
-              </div>
-              <div className="mg-landing-stats__label">{stat.label}</div>
-              <p className="mg-landing-stats__desc">{stat.desc}</p>
+              </motion.div>
+
+              <motion.div
+                className="mg-landing-stats__label"
+                {...fadeUp(idx * 0.13 + 0.18)}
+              >
+                {stat.label}
+              </motion.div>
+
+              <motion.p
+                className="mg-landing-stats__desc"
+                {...fadeUp(idx * 0.13 + 0.22)}
+              >
+                {stat.desc}
+              </motion.p>
             </motion.div>
           ))}
         </div>

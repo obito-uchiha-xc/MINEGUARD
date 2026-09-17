@@ -3,6 +3,28 @@ import { Shield, AlertCircle, AlertTriangle, AlertOctagon, CheckCircle2 } from '
 import { motion } from 'framer-motion';
 import './LandingHowItWorks.css';
 
+const fadeUp = (delay = 0) => ({
+  initial: { opacity: 0, y: 40, scale: 0.96, filter: 'blur(6px)' },
+  whileInView: { opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' },
+  viewport: { once: false, margin: '-40px' },
+  transition: {
+    duration: 0.75,
+    delay,
+    ease: [0.22, 1, 0.36, 1] as const,
+  },
+});
+
+const fadeUpSoft = (delay = 0) => ({
+  initial: { opacity: 0, y: 20, filter: 'blur(3px)' },
+  whileInView: { opacity: 1, y: 0, filter: 'blur(0px)' },
+  viewport: { once: false, margin: '-40px' },
+  transition: {
+    duration: 0.6,
+    delay,
+    ease: [0.22, 1, 0.36, 1] as const,
+  },
+});
+
 export const LandingHowItWorks: React.FC = () => {
   const tarpLevels = [
     {
@@ -62,55 +84,64 @@ export const LandingHowItWorks: React.FC = () => {
   return (
     <section className="mg-landing-how" id="tarp">
       <div className="mg-landing-how__container">
-        <motion.div
-          className="mg-landing-how__header"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-50px' }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <div className="mg-landing-how__eyebrow">
-            <span>OPERATIONAL SAFETY PROTOCOL</span>
-          </div>
-          <h2 className="mg-landing-how__title">
-            Trigger Action Response Plan (TARP)
-          </h2>
-          <p className="mg-landing-how__subtitle">
-            MineGuard executes standardized, non-alarmist geotechnical TARP frameworks to translate
-            raw millimetric deformation into unambiguous, audited mining safety actions.
-          </p>
+
+        <motion.div className="mg-landing-how__eyebrow" {...fadeUpSoft(0)}>
+          <span>OPERATIONAL SAFETY PROTOCOL</span>
         </motion.div>
+
+        <motion.h2 className="mg-landing-how__title" {...fadeUp(0.08)}>
+          Trigger Action Response Plan (TARP)
+        </motion.h2>
+
+        <motion.p className="mg-landing-how__subtitle" {...fadeUpSoft(0.18)}>
+          MineGuard executes standardized, non-alarmist geotechnical TARP frameworks to translate
+          raw millimetric deformation into unambiguous, audited mining safety actions.
+        </motion.p>
 
         <div className="mg-landing-how__grid">
           {tarpLevels.map((t, idx) => (
             <motion.div
               key={t.level}
               className="mg-tarp-card"
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{
-                duration: 0.6,
-                delay: idx * 0.12,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-              whileHover={{ y: -4, transition: { duration: 0.2 } }}
+              {...fadeUp(idx * 0.13)}
+              whileHover={{ y: -6, scale: 1.02, transition: { duration: 0.25 } }}
             >
-              <div className="mg-tarp-card__top">
+              <motion.div className="mg-tarp-card__top" {...fadeUpSoft(idx * 0.13 + 0.08)}>
                 <span className={`mg-tarp-badge ${t.badgeClass}`}>{t.level}</span>
                 <div className="mg-tarp-card__icon">{t.icon}</div>
-              </div>
+              </motion.div>
 
-              <div className="mg-tarp-card__status">{t.status}</div>
-              <div className="mg-tarp-card__threshold mono-telemetry">{t.threshold}</div>
-              <p className="mg-tarp-card__action">{t.action}</p>
+              <motion.div
+                className="mg-tarp-card__status"
+                {...fadeUpSoft(idx * 0.13 + 0.13)}
+              >
+                {t.status}
+              </motion.div>
+
+              <motion.div
+                className="mg-tarp-card__threshold mono-telemetry"
+                {...fadeUpSoft(idx * 0.13 + 0.17)}
+              >
+                {t.threshold}
+              </motion.div>
+
+              <motion.p
+                className="mg-tarp-card__action"
+                {...fadeUpSoft(idx * 0.13 + 0.21)}
+              >
+                {t.action}
+              </motion.p>
 
               <div className="mg-tarp-card__protocols">
                 {t.protocols.map((p, i) => (
-                  <div key={i} className="mg-tarp-card__protocol-item">
+                  <motion.div
+                    key={i}
+                    className="mg-tarp-card__protocol-item"
+                    {...fadeUpSoft(idx * 0.13 + 0.26 + i * 0.08)}
+                  >
                     <CheckCircle2 size={14} className="mg-tarp-card__check" />
                     <span>{p}</span>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </motion.div>

@@ -11,6 +11,29 @@ import {
 import { motion } from 'framer-motion';
 import './LandingFeatures.css';
 
+const fadeUp = (delay = 0) => ({
+  initial: { opacity: 0, y: 40, scale: 0.96, filter: 'blur(6px)' },
+  whileInView: { opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' },
+  viewport: { once: false, margin: '-40px' },
+  transition: {
+    duration: 0.75,
+    delay,
+    ease: [0.22, 1, 0.36, 1] as const,
+  },
+});
+
+// Lighter variant for small text elements (less blur/travel)
+const fadeUpSoft = (delay = 0) => ({
+  initial: { opacity: 0, y: 20, filter: 'blur(3px)' },
+  whileInView: { opacity: 1, y: 0, filter: 'blur(0px)' },
+  viewport: { once: false, margin: '-40px' },
+  transition: {
+    duration: 0.6,
+    delay,
+    ease: [0.22, 1, 0.36, 1] as const,
+  },
+});
+
 export const LandingFeatures: React.FC = () => {
   const systems = [
     {
@@ -78,66 +101,70 @@ export const LandingFeatures: React.FC = () => {
   return (
     <section className="mg-landing-features" id="capabilities">
       <div className="mg-landing-features__container">
-        {/* Industrial Section Header */}
-        <motion.div
-          className="mg-landing-features__header"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-50px' }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <div className="mg-landing-features__eyebrow">
-            <Pickaxe size={15} className="text-gold-glow" />
-            <span>MINE SAFETY ARCHITECTURE</span>
-          </div>
-          <h2 className="mg-landing-features__title">
-            Engineered Mining Geotechnical Systems
-          </h2>
-          <p className="mg-landing-features__subtitle">
-            An integrated, fail-safe monitoring suite built for chief geotechnical engineers,
-            pit superintendents, and control-room shift supervisors.
-          </p>
+
+        <motion.div className="mg-landing-features__eyebrow" {...fadeUpSoft(0)}>
+          <Pickaxe size={15} className="text-gold-glow" />
+          <span>MINE SAFETY ARCHITECTURE</span>
         </motion.div>
 
-        {/* 2x2 Feature Grid */}
+        <motion.h2 className="mg-landing-features__title" {...fadeUp(0.08)}>
+          Engineered Mining Geotechnical Systems
+        </motion.h2>
+
+        <motion.p className="mg-landing-features__subtitle" {...fadeUpSoft(0.18)}>
+          An integrated, fail-safe monitoring suite built for chief geotechnical engineers,
+          pit superintendents, and control-room shift supervisors.
+        </motion.p>
+
         <div className="mg-landing-features__grid">
           {systems.map((s, idx) => (
             <motion.div
               key={s.id}
               className="mg-feature-card"
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{
-                duration: 0.6,
-                delay: idx * 0.12,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-              whileHover={{ y: -4, transition: { duration: 0.2 } }}
+              {...fadeUp(idx * 0.13)}
+              whileHover={{ y: -6, scale: 1.02, transition: { duration: 0.25 } }}
             >
-              <div className="mg-feature-card__top">
+              <motion.div className="mg-feature-card__top" {...fadeUpSoft(idx * 0.13 + 0.08)}>
                 <div className="mg-feature-card__icon-box">{s.icon}</div>
                 <span className="mg-feature-card__tag">{s.tag}</span>
-              </div>
+              </motion.div>
 
-              <h3 className="mg-feature-card__title">{s.title}</h3>
-              <p className="mg-feature-card__desc">{s.description}</p>
+              <motion.h3
+                className="mg-feature-card__title"
+                {...fadeUp(idx * 0.13 + 0.13)}
+              >
+                {s.title}
+              </motion.h3>
+
+              <motion.p
+                className="mg-feature-card__desc"
+                {...fadeUpSoft(idx * 0.13 + 0.18)}
+              >
+                {s.description}
+              </motion.p>
 
               <ul className="mg-feature-card__bullets">
                 {s.highlights.map((h, i) => (
-                  <li key={i} className="mg-feature-card__bullet-item">
+                  <motion.li
+                    key={i}
+                    className="mg-feature-card__bullet-item"
+                    {...fadeUpSoft(idx * 0.13 + 0.22 + i * 0.07)}
+                  >
                     <span className="mg-feature-card__bullet-dot" />
                     <span>{h}</span>
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
 
-              <div className="mg-feature-card__footer">
+              <motion.div
+                className="mg-feature-card__footer"
+                {...fadeUpSoft(idx * 0.13 + 0.38)}
+              >
                 <Link to={s.route} className="mg-feature-card__cta">
                   <span>{s.linkText}</span>
                   <ArrowUpRight size={17} />
                 </Link>
-              </div>
+              </motion.div>
             </motion.div>
           ))}
         </div>
