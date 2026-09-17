@@ -761,3 +761,37 @@ def test_ai_anomaly_score_does_not_trigger_phase6_alert(client, seeded_node):
         f"/api/v1/alerts/nodes/{seeded_node['node_identifier']}/active"
     )
     assert alerts_resp.status_code in (200, 404)
+
+
+def test_api_ai_query_copilot_general(client):
+    """POST /api/v1/ai/query handles interactive general questions."""
+    resp = client.post(
+        "/api/v1/ai/query",
+        json={"query": "Evaluate slope stability for Sector 4"},
+    )
+    assert resp.status_code == 200
+    data = resp.json()
+    assert "answer" in data
+    assert "verdict" in data
+    assert "confidence" in data
+    assert "geotechnical_factors" in data
+    assert "recommended_actions" in data
+    assert "ADR D-032" in data["disclaimer"]
+
+
+def test_api_ai_query_copilot_creep_and_tarp(client):
+    """POST /api/v1/ai/query handles kinematic creep and TARP inquiries."""
+    resp_creep = client.post(
+        "/api/v1/ai/query",
+        json={"query": "Has tertiary accelerating creep been observed?"},
+    )
+    assert resp_creep.status_code == 200
+    assert "tertiary" in resp_creep.json()["answer"].lower()
+
+    resp_tarp = client.post(
+        "/api/v1/ai/query",
+        json={"query": "What TARP actions are required if pore pressure exceeds 120 kPa?"},
+    )
+    assert resp_tarp.status_code == 200
+    assert "tarp" in resp_tarp.json()["verdict"].lower() or "tarp" in resp_tarp.json()["answer"].lower()
+

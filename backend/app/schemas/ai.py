@@ -68,3 +68,32 @@ class ManualEvaluationRequest(BaseModel):
         le=200,
         description="Optional custom baseline window size for this on-demand evaluation.",
     )
+
+
+class AIQueryRequest(BaseModel):
+    """Request DTO for asking questions to the assistive geotechnical AI model."""
+
+    query: str = Field(..., min_length=2, max_length=1000, description="The user question or inquiry")
+    node_identifier: Optional[str] = Field(default=None, description="Optional target node identifier")
+    focus_area: Optional[str] = Field(default="general", description="Analysis focus (e.g. general, creep, tarp, anomalies)")
+
+
+class AIQueryResponse(BaseModel):
+    """Response DTO with structured geotechnical AI inference and recommendations."""
+
+    model_config = ConfigDict(from_attributes=True)
+
+    answer: str
+    verdict: str
+    confidence: float
+    model_name: str
+    model_version: str
+    node_identifier: Optional[str] = None
+    geotechnical_factors: List[str] = Field(default_factory=list)
+    recommended_actions: List[str] = Field(default_factory=list)
+    disclaimer: str = (
+        "ADR D-032: Assistive intelligence output based on unsupervised statistical models. "
+        "Deterministic Phase 6 TARP rules remain authoritative."
+    )
+    timestamp: datetime = Field(default_factory=lambda: datetime.now())
+

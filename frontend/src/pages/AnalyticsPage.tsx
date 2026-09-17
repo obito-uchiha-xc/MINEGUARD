@@ -17,9 +17,11 @@ import {
   Sliders,
   Radio,
   FileCode,
+  Sparkles,
 } from 'lucide-react';
 import { aiService } from '../services/aiService';
 import { nodesService } from '../services/nodesService';
+import { AiModelCopilot } from '../components/analytics/AiModelCopilot';
 import type {
   AIAnomalyRecordResponse,
   ModelMetadataResponse,
@@ -29,7 +31,7 @@ import { formatUtcDisplay } from '../utils/date';
 import './AnalyticsPage.css';
 
 export const AnalyticsPage: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'MODELS' | 'INSPECTOR' | 'CREEP' | 'FAILURE'>('MODELS');
+  const [activeTab, setActiveTab] = useState<'COPILOT' | 'MODELS' | 'INSPECTOR' | 'CREEP' | 'FAILURE'>('COPILOT');
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [liveModels, setLiveModels] = useState<ModelMetadataResponse[]>([]);
   const [nodes, setNodes] = useState<NodeSummaryResponse[]>([]);
@@ -172,7 +174,15 @@ export const AnalyticsPage: React.FC = () => {
           />
         }
         actions={
-          <div className="mg-analytics-header-actions">
+          <div className="mg-analytics-header-actions" style={{ display: 'flex', gap: '8px' }}>
+            <Button
+              variant={activeTab === 'COPILOT' ? 'primary' : 'secondary'}
+              size="sm"
+              leftIcon={<Sparkles size={14} />}
+              onClick={() => setActiveTab('COPILOT')}
+            >
+              Ask AI Model
+            </Button>
             <Button
               variant="secondary"
               size="sm"
@@ -262,6 +272,15 @@ export const AnalyticsPage: React.FC = () => {
         <div className="mg-analytics-tabs-bar">
           <button
             type="button"
+            className={`mg-analytics-tab ${activeTab === 'COPILOT' ? 'is-active' : ''}`}
+            onClick={() => setActiveTab('COPILOT')}
+          >
+            <Sparkles size={15} />
+            <span>AI Copilot (Ask Model)</span>
+            <span style={{ fontSize: '10px', background: 'rgba(217, 119, 6, 0.12)', color: '#b45309', padding: '1px 6px', borderRadius: '10px', fontWeight: 700 }}>Interactive</span>
+          </button>
+          <button
+            type="button"
             className={`mg-analytics-tab ${activeTab === 'MODELS' ? 'is-active' : ''}`}
             onClick={() => setActiveTab('MODELS')}
           >
@@ -293,6 +312,11 @@ export const AnalyticsPage: React.FC = () => {
             <span>Failure Mechanisms (Reference)</span>
           </button>
         </div>
+
+        {/* TAB 0: INTERACTIVE AI COPILOT */}
+        {activeTab === 'COPILOT' && (
+          <AiModelCopilot nodes={nodes} defaultNodeId={selectedNodeId} />
+        )}
 
         {/* TAB 1: ACTIVE MODELS */}
         {activeTab === 'MODELS' && (

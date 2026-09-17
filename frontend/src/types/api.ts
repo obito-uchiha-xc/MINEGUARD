@@ -313,6 +313,25 @@ export interface AIAnomalyHistoryParams {
   limit?: number;
 }
 
+export interface AIQueryRequest {
+  query: string;
+  node_identifier?: string;
+  focus_area?: string;
+}
+
+export interface AIQueryResponse {
+  answer: string;
+  verdict: string;
+  confidence: number;
+  model_name: string;
+  model_version: string;
+  node_identifier?: string | null;
+  geotechnical_factors: string[];
+  recommended_actions: string[];
+  disclaimer: string;
+  timestamp: string;
+}
+
 // ==========================================
 // 10. Configurable Safety Rules
 // ==========================================

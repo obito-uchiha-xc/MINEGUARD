@@ -17,8 +17,14 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from backend.app.core.errors import AppException
 from backend.app.db.session import get_db_session
 from backend.app.models.node import IntegratedNode
-from backend.app.schemas.ai import AIAnomalyRecordResponse, ModelMetadataResponse
+from backend.app.schemas.ai import (
+    AIAnomalyRecordResponse,
+    AIQueryRequest,
+    AIQueryResponse,
+    ModelMetadataResponse,
+)
 from backend.app.services.ai.ai_service import AIService
+from backend.app.services.ai.copilot import process_copilot_query
 
 router = APIRouter(prefix="/ai", tags=["AI Anomaly Detection"])
 
@@ -110,3 +116,22 @@ async def get_model_metadata(
     """Return metadata for all active anomaly detection models."""
     ai_service = AIService(session)
     return ai_service.get_models_metadata()
+
+
+@router.post(
+    "/query",
+    response_model=AIQueryResponse,
+    summary="Interactive Geotechnical AI Copilot Q&A",
+    description=(
+        "Enables interactive geotechnical querying of the MineGuard AI models. "
+        "Evaluates kinematics, creep stages, TARP actions, and sensor departures. "
+        "Operates strictly as assistive intelligence per ADR D-032."
+    ),
+)
+async def query_ai_copilot(
+    request: AIQueryRequest,
+    session: AsyncSession = Depends(get_db_session),
+) -> AIQueryResponse:
+    """Process an interactive natural language query through the geotechnical AI engine."""
+    return await process_copilot_query(request, session)
+
