@@ -7,7 +7,6 @@ import { LandingStats } from '../components/landing/LandingStats';
 import { LandingFeatures } from '../components/landing/LandingFeatures';
 import { LandingHowItWorks } from '../components/landing/LandingHowItWorks';
 import { LandingArchitecture } from '../components/landing/LandingArchitecture';
-import { LandingCta } from '../components/landing/LandingCta';
 import { LandingFooter } from '../components/landing/LandingFooter';
 import { ScrollProgressBar } from '../components/ui/ScrollProgressBar';
 import './LandingPage.css';
@@ -65,7 +64,6 @@ export const LandingPage: React.FC = () => {
         <LandingFeatures />
         <LandingHowItWorks />
         <LandingArchitecture />
-        <LandingCta />
       </main>
 
       {/* Clean Footer */}
