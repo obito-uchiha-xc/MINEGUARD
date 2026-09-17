@@ -33,23 +33,25 @@
   flex-shrink: 0;
 }
 
+/* Dark cyan tile — cyan for tech/active accent */
 .mg-landing-nav__logo-box {
   width: 42px;
   height: 42px;
   border-radius: 10px;
-  background: linear-gradient(135deg, rgba(229, 169, 60, 0.18) 0%, rgba(229, 169, 60, 0.04) 100%);
-  border: 1px solid rgba(229, 169, 60, 0.35);
-  box-shadow: 0 0 16px rgba(229, 169, 60, 0.2);
+  background: linear-gradient(135deg, rgba(0, 194, 255, 0.14) 0%, rgba(0, 30, 45, 0.85) 100%);
+  border: 1px solid rgba(0, 194, 255, 0.38);
+  box-shadow: 0 0 14px rgba(0, 194, 255, 0.18), inset 0 1px 0 rgba(0, 194, 255, 0.08);
   display: flex;
   align-items: center;
   justify-content: center;
+  /* Helmet icon stays amber/gold — safety emphasis */
   color: #e5a93c;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .mg-landing-nav__brand:hover .mg-landing-nav__logo-box {
   transform: translateY(-1px);
-  box-shadow: 0 0 22px rgba(229, 169, 60, 0.35);
+  box-shadow: 0 0 22px rgba(0, 194, 255, 0.32), inset 0 1px 0 rgba(0, 194, 255, 0.12);
 }
 
 .mg-landing-nav__brand-info {
@@ -63,11 +65,15 @@
   gap: 8px;
 }
 
+/* MINEGUARD — warm metallic gold gradient */
 .mg-landing-nav__brand-name {
   font-size: 1.15rem;
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: #f5f5f7;
+  background: linear-gradient(90deg, #FFFFFF 0%, #FDF3DA 45%, #F3CA68 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .mg-landing-nav__brand-pill {

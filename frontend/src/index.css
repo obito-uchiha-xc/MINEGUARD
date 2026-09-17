@@ -27,9 +27,10 @@ body {
   min-height: 100vh;
   background-color: var(--color-bg);
   background-image: 
-    radial-gradient(ellipse 65% 35% at 50% -5%, rgba(0, 194, 255, 0.05), transparent 70%),
-    radial-gradient(circle at 95% 95%, rgba(243, 202, 104, 0.04), transparent 45%),
-    linear-gradient(180deg, #0B0F14 0%, #0E141B 50%, #0B0F14 100%);
+    radial-gradient(ellipse 80% 40% at 50% -8%, rgba(0, 194, 255, 0.07), transparent 70%),
+    radial-gradient(circle at 92% 92%, rgba(243, 202, 104, 0.05), transparent 45%),
+    radial-gradient(circle at 8% 80%, rgba(0, 194, 255, 0.03), transparent 40%),
+    linear-gradient(180deg, #0B0F14 0%, #0E141B 60%, #0B0F14 100%);
   background-attachment: fixed;
   color: var(--color-text-primary);
   font-family: var(--font-sans);
