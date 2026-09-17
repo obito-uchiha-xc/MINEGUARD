@@ -1,7 +1,9 @@
 .mg-sidebar {
   width: 260px;
-  background-color: var(--color-bg-alt);
-  border-right: 1px solid var(--color-border);
+  background-color: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(18px) saturate(1.6);
+  -webkit-backdrop-filter: blur(18px) saturate(1.6);
+  border-right: 1px solid rgba(226, 232, 240, 0.6);
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -51,9 +53,9 @@
   width: 38px;
   height: 38px;
   border-radius: var(--radius-md);
-  background: linear-gradient(135deg, rgba(229, 169, 60, 0.16) 0%, rgba(229, 169, 60, 0.04) 100%);
-  border: 1px solid rgba(229, 169, 60, 0.35);
-  box-shadow: 0 0 12px rgba(229, 169, 60, 0.2);
+  background: linear-gradient(135deg, rgba(217, 119, 6, 0.12) 0%, rgba(217, 119, 6, 0.04) 100%);
+  border: 1px solid rgba(217, 119, 6, 0.3);
+  box-shadow: 0 2px 8px rgba(217, 119, 6, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,8 +63,8 @@
 }
 
 .mg-sidebar__logo-icon {
-  color: #e5a93c;
-  filter: drop-shadow(0 0 6px rgba(229, 169, 60, 0.5));
+  color: #B45309;
+  filter: drop-shadow(0 0 4px rgba(217, 119, 6, 0.3));
 }
 
 .mg-sidebar__title-block {
@@ -130,8 +132,8 @@
 /* FOOTER */
 .mg-sidebar__footer {
   padding: var(--space-3);
-  border-top: 1px solid var(--color-border-subtle);
-  background-color: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(226, 232, 240, 0.5);
+  background-color: rgba(248, 250, 252, 0.6);
   flex-shrink: 0;
 }
 
@@ -178,7 +180,7 @@
 .mg-sidebar-backdrop {
   position: fixed;
   inset: 0;
-  background-color: rgba(7, 13, 20, 0.75);
+  background-color: rgba(15, 23, 42, 0.45);
   backdrop-filter: blur(4px);
   z-index: 150;
 }

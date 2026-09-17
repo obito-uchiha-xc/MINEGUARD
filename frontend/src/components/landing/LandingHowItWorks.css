@@ -1,9 +1,9 @@
 .mg-landing-how {
   padding: 80px 0;
   position: relative;
-  background: rgba(12, 12, 18, 0.5);
-  border-top: 1px solid rgba(229, 169, 60, 0.12);
-  border-bottom: 1px solid rgba(229, 169, 60, 0.12);
+  background: transparent;
+  border-top: 1px solid rgba(226, 232, 240, 0.35);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.35);
 }
 
 .mg-landing-how__container {
@@ -22,7 +22,7 @@
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.08em;
-  color: #f3ca68;
+  color: #B45309;
   margin-bottom: 14px;
 }
 
@@ -30,13 +30,13 @@
   font-size: clamp(1.9rem, 3.5vw, 2.8rem);
   font-weight: 800;
   letter-spacing: -0.02em;
-  color: #ffffff;
+  color: #0F172A;
   margin: 0 0 16px;
 }
 
 .mg-landing-how__subtitle {
   font-size: 1.05rem;
-  color: #a1a1aa;
+  color: #475569;
   line-height: 1.6;
   margin: 0;
 }
@@ -48,18 +48,22 @@
 }
 
 .mg-tarp-card {
-  background: #0e0e14;
-  border: 1px solid rgba(229, 169, 60, 0.16);
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(16px) saturate(1.5);
+  -webkit-backdrop-filter: blur(16px) saturate(1.5);
+  border: 1px solid rgba(226, 232, 240, 0.45);
   border-radius: 12px;
   padding: 28px 24px;
   display: flex;
   flex-direction: column;
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .mg-tarp-card:hover {
   transform: translateY(-3px);
-  border-color: rgba(229, 169, 60, 0.4);
+  border-color: #CBD5E1;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
 }
 
 .mg-tarp-card__top {
@@ -78,49 +82,49 @@
 }
 
 .mg-tarp-badge--level0 {
-  background: rgba(16, 185, 129, 0.12);
-  color: #34d399;
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  background: rgba(22, 163, 74, 0.1);
+  color: #15803D;
+  border: 1px solid rgba(22, 163, 74, 0.25);
 }
 
 .mg-tarp-badge--level1 {
-  background: rgba(59, 130, 246, 0.12);
-  color: #60a5fa;
-  border: 1px solid rgba(59, 130, 246, 0.3);
+  background: rgba(2, 132, 199, 0.1);
+  color: #0284C7;
+  border: 1px solid rgba(2, 132, 199, 0.25);
 }
 
 .mg-tarp-badge--level2 {
-  background: rgba(245, 158, 11, 0.12);
-  color: #fbbf24;
-  border: 1px solid rgba(245, 158, 11, 0.3);
+  background: rgba(217, 119, 6, 0.1);
+  color: #B45309;
+  border: 1px solid rgba(217, 119, 6, 0.25);
 }
 
 .mg-tarp-badge--level3 {
-  background: rgba(239, 68, 68, 0.15);
-  color: #f87171;
-  border: 1px solid rgba(239, 68, 68, 0.4);
+  background: rgba(220, 38, 38, 0.1);
+  color: #DC2626;
+  border: 1px solid rgba(220, 38, 38, 0.25);
 }
 
 .mg-tarp-card__status {
   font-size: 0.95rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #0F172A;
   margin-bottom: 6px;
 }
 
 .mg-tarp-card__threshold {
   font-size: 0.8rem;
-  color: #f3ca68;
-  background: rgba(229, 169, 60, 0.06);
+  color: #B45309;
+  background: rgba(217, 119, 6, 0.06);
   padding: 6px 10px;
   border-radius: 4px;
-  border: 1px solid rgba(229, 169, 60, 0.15);
+  border: 1px solid rgba(217, 119, 6, 0.2);
   margin-bottom: 14px;
 }
 
 .mg-tarp-card__action {
   font-size: 0.85rem;
-  color: #a1a1aa;
+  color: #475569;
   line-height: 1.55;
   margin: 0 0 20px;
   flex: 1;
@@ -130,7 +134,7 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid #F1F5F9;
   padding-top: 16px;
 }
 
@@ -139,12 +143,12 @@
   align-items: flex-start;
   gap: 8px;
   font-size: 0.78rem;
-  color: #d4d4d8;
+  color: #334155;
   line-height: 1.4;
 }
 
 .mg-tarp-card__check {
-  color: #e5a93c;
+  color: #D97706;
   margin-top: 2px;
   flex-shrink: 0;
 }

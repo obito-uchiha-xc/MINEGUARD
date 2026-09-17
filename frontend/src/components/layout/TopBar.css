@@ -1,7 +1,9 @@
 .mg-topbar {
   height: 64px;
-  background-color: var(--color-bg-alt);
-  border-bottom: 1px solid var(--color-border);
+  background-color: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(18px) saturate(1.6);
+  -webkit-backdrop-filter: blur(18px) saturate(1.6);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.6);
   padding: 0 var(--space-6);
   display: flex;
   align-items: center;
@@ -32,8 +34,8 @@
   align-items: center;
   gap: 8px;
   padding: 4px 10px;
-  background-color: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background-color: var(--color-bg-subtle);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   font-size: 11px;
 }
@@ -42,19 +44,19 @@
   width: 6px;
   height: 6px;
   border-radius: var(--radius-full);
-  background-color: #e5a93c;
-  box-shadow: 0 0 6px rgba(229, 169, 60, 0.6);
+  background-color: #B45309;
+  box-shadow: 0 0 6px rgba(180, 83, 9, 0.4);
 }
 
 .mg-topbar__context-title {
   font-size: 10px;
   font-weight: 700;
-  color: #e5a93c;
+  color: #B45309;
   letter-spacing: 0.06em;
 }
 
 .mg-topbar__context-sep {
-  color: rgba(255, 255, 255, 0.2);
+  color: var(--color-border-strong);
   font-size: 10px;
 }
 
@@ -62,7 +64,7 @@
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  color: var(--color-text-secondary, #a1a1aa);
+  color: var(--color-text-secondary);
   font-size: 11px;
   text-decoration: none;
   font-weight: 500;
@@ -70,7 +72,7 @@
 }
 
 .mg-topbar__overview-link:hover {
-  color: #ffffff;
+  color: #B45309;
 }
 
 /* RIGHT */
@@ -86,8 +88,8 @@
   align-items: center;
   gap: 8px;
   padding: 4px 12px;
-  background-color: rgba(0, 0, 0, 0.25);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: var(--color-bg-subtle);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   font-size: 11px;
 }
@@ -96,8 +98,8 @@
   width: 6px;
   height: 6px;
   border-radius: var(--radius-full);
-  background-color: #10b981;
-  box-shadow: 0 0 8px #10b981;
+  background-color: #16A34A;
+  box-shadow: 0 0 8px rgba(22, 163, 74, 0.4);
   animation: mgCapsulePulse 2s ease-in-out infinite;
 }
 
@@ -115,14 +117,14 @@
 .mg-topbar__capsule-status {
   font-size: 10px;
   font-weight: 700;
-  color: #10b981;
+  color: #15803D;
   letter-spacing: 0.06em;
 }
 
 .mg-topbar__capsule-divider {
   width: 1px;
   height: 12px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--color-border);
 }
 
 .mg-topbar__capsule-icon {
@@ -155,17 +157,17 @@
   width: 32px;
   height: 32px;
   border-radius: var(--radius-md);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
   color: var(--color-text-secondary);
   cursor: pointer;
   transition: all var(--transition-fast);
 }
 
 .mg-topbar__icon-trigger:hover {
-  background-color: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
-  color: #ffffff;
+  background-color: var(--color-surface-hover);
+  border-color: var(--color-border-strong);
+  color: var(--color-text-primary);
 }
 
 .mg-topbar__notif-badge {
@@ -185,8 +187,8 @@
   align-items: center;
   gap: var(--space-2);
   padding: 3px 10px 3px 6px;
-  background-color: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   cursor: pointer;
   transition: all var(--transition-fast);
@@ -194,18 +196,18 @@
 }
 
 .mg-topbar__user-trigger:hover {
-  background-color: rgba(255, 255, 255, 0.08);
-  border-color: rgba(229, 169, 60, 0.35);
-  box-shadow: 0 0 12px rgba(229, 169, 60, 0.15);
+  background-color: var(--color-surface-hover);
+  border-color: rgba(217, 119, 6, 0.4);
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.06);
 }
 
 .mg-topbar__user-avatar {
   width: 28px;
   height: 28px;
   border-radius: var(--radius-full);
-  background: linear-gradient(135deg, rgba(229, 169, 60, 0.18) 0%, rgba(229, 169, 60, 0.05) 100%);
-  border: 1px solid rgba(229, 169, 60, 0.35);
-  color: #f3ca68;
+  background: linear-gradient(135deg, rgba(217, 119, 6, 0.15) 0%, rgba(217, 119, 6, 0.04) 100%);
+  border: 1px solid rgba(217, 119, 6, 0.3);
+  color: #B45309;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -280,10 +282,10 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  background: rgba(0, 0, 0, 0.25);
+  background: var(--color-bg-subtle);
   padding: 3px 6px;
   border-radius: var(--radius-md);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--color-border);
 }
 
 .mg-topbar__audio-btn {
@@ -302,33 +304,33 @@
 }
 
 .mg-topbar__audio-btn:hover {
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--color-surface-hover);
   color: var(--color-text-primary);
 }
 
 .mg-topbar__audio-btn.is-testing {
-  background: rgba(229, 169, 60, 0.15);
-  border-color: rgba(229, 169, 60, 0.4);
-  color: #f3ca68;
+  background: rgba(217, 119, 6, 0.1);
+  border-color: rgba(217, 119, 6, 0.35);
+  color: #B45309;
 }
 
 .mg-topbar__audio-btn.is-muted {
-  background: rgba(239, 68, 68, 0.08);
-  border-color: rgba(239, 68, 68, 0.25);
+  background: rgba(220, 38, 38, 0.08);
+  border-color: rgba(220, 38, 38, 0.25);
 }
 
 /* SOS BUZZER BUTTON */
 .mg-topbar__sos-btn {
-  background: rgba(245, 158, 11, 0.08);
-  border-color: rgba(245, 158, 11, 0.25);
-  color: #f3ca68;
+  background: rgba(217, 119, 6, 0.08);
+  border-color: rgba(217, 119, 6, 0.25);
+  color: #B45309;
   user-select: none;
   -webkit-user-select: none;
 }
 
 .mg-topbar__sos-btn:hover {
-  background: rgba(245, 158, 11, 0.16);
-  border-color: rgba(245, 158, 11, 0.45);
+  background: rgba(217, 119, 6, 0.14);
+  border-color: rgba(217, 119, 6, 0.45);
 }
 
 .mg-topbar__sos-btn.is-buzzing {
@@ -356,13 +358,13 @@
 
 .mg-topbar__rearm-alarm-btn {
   background: rgba(245, 158, 11, 0.12) !important;
-  border-color: rgba(245, 158, 11, 0.3) !important;
-  color: #fcd34d !important;
+  border-color: rgba(245, 158, 11, 0.35) !important;
+  color: #92400e !important;
 }
 
 .mg-topbar__rearm-alarm-btn:hover {
-  background: rgba(245, 158, 11, 0.25) !important;
-  color: #ffffff !important;
+  background: rgba(245, 158, 11, 0.22) !important;
+  color: #78350f !important;
 }
 
 .mg-topbar__mobile-shut-btn {

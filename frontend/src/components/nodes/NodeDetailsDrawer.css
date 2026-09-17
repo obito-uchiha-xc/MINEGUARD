@@ -645,9 +645,9 @@
   margin: var(--space-3) var(--space-4) 0;
   padding: 10px 12px;
   border-radius: var(--radius-md);
-  background: rgba(30, 10, 10, 0.9);
-  border: 1px solid rgba(239, 68, 68, 0.4);
-  box-shadow: 0 4px 14px rgba(239, 68, 68, 0.2);
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  box-shadow: 0 4px 14px rgba(239, 68, 68, 0.1);
 }
 
 .mg-drawer__alarm-banner-header {
@@ -685,9 +685,9 @@
   gap: 5px;
   padding: 5px 10px;
   border-radius: 4px;
-  background: rgba(245, 158, 11, 0.15);
+  background: rgba(245, 158, 11, 0.12);
   border: 1px solid rgba(245, 158, 11, 0.35);
-  color: #fcd34d;
+  color: #92400e;
   font-size: 11px;
   font-weight: 600;
   cursor: pointer;
@@ -695,7 +695,7 @@
 }
 
 .mg-drawer__rearm-alarm-btn:hover {
-  background: rgba(245, 158, 11, 0.25);
-  color: #ffffff;
+  background: rgba(245, 158, 11, 0.22);
+  color: #78350f;
 }
 

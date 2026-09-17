@@ -21,8 +21,8 @@
   gap: 10px;
   padding: 7px 18px;
   border-radius: 6px;
-  background: rgba(229, 169, 60, 0.08);
-  border: 1px solid rgba(229, 169, 60, 0.3);
+  background: rgba(217, 119, 6, 0.08);
+  border: 1px solid rgba(217, 119, 6, 0.25);
   margin-bottom: 24px;
 }
 
@@ -30,8 +30,8 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #e5a93c;
-  box-shadow: 0 0 10px #e5a93c;
+  background: #D97706;
+  box-shadow: 0 0 10px rgba(217, 119, 6, 0.4);
   animation: mg-pulse-slow 2s infinite ease-in-out;
 }
 
@@ -39,7 +39,7 @@
   font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.08em;
-  color: #f3ca68;
+  color: #B45309;
 }
 
 /* Title */
@@ -48,7 +48,7 @@
   font-weight: 800;
   line-height: 1.16;
   letter-spacing: -0.03em;
-  color: #ffffff;
+  color: #0F172A;
   max-width: 980px;
   margin: 0 0 20px;
 }
@@ -62,7 +62,7 @@
 .mg-landing-hero__subtitle {
   font-size: clamp(0.98rem, 1.8vw, 1.15rem);
   line-height: 1.65;
-  color: #a1a1aa;
+  color: #475569;
   max-width: 860px;
   margin: 0 0 36px;
   font-weight: 400;
@@ -98,64 +98,64 @@
 }
 
 .mg-hero-btn--primary {
-  background: linear-gradient(135deg, #e5a93c 0%, #c78824 100%);
-  color: #09090c;
-  border: 1px solid rgba(229, 169, 60, 0.65);
-  box-shadow: 0 4px 18px rgba(229, 169, 60, 0.35);
+  background: linear-gradient(135deg, #D97706 0%, #B45309 100%);
+  color: #FFFFFF;
+  border: 1px solid rgba(180, 83, 9, 0.5);
+  box-shadow: 0 4px 18px rgba(180, 83, 9, 0.28);
 }
 
 .mg-hero-btn--primary:hover {
-  box-shadow: 0 8px 26px rgba(229, 169, 60, 0.5);
-  filter: brightness(1.06);
+  box-shadow: 0 8px 26px rgba(180, 83, 9, 0.4);
+  filter: brightness(1.05);
 }
 
 .mg-hero-btn--secondary {
-  background: rgba(20, 20, 28, 0.85);
-  color: #f5f5f7;
-  border: 1px solid rgba(229, 169, 60, 0.25);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  background: #FFFFFF;
+  color: #0F172A;
+  border: 1px solid #CBD5E1;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.06);
 }
 
 .mg-hero-btn--secondary:hover {
-  border-color: rgba(229, 169, 60, 0.45);
-  color: #f3ca68;
+  border-color: #B45309;
+  color: #B45309;
 }
 
 .mg-hero-btn--alert {
-  background: rgba(239, 68, 68, 0.08);
-  color: #fca5a5;
-  border: 1px solid rgba(239, 68, 68, 0.3);
+  background: rgba(220, 38, 38, 0.08);
+  color: #DC2626;
+  border: 1px solid rgba(220, 38, 38, 0.25);
 }
 
 .mg-hero-btn--alert:hover {
-  background: rgba(239, 68, 68, 0.15);
-  border-color: rgba(239, 68, 68, 0.5);
+  background: rgba(220, 38, 38, 0.12);
+  border-color: rgba(220, 38, 38, 0.45);
 }
 
 .mg-hero-btn__alert-dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #ef4444;
-  box-shadow: 0 0 8px #ef4444;
+  background: #DC2626;
+  box-shadow: 0 0 8px rgba(220, 38, 38, 0.5);
 }
 
 /* Industrial Sector Health Board */
 .mg-landing-hero__board {
   width: 100%;
   max-width: 1160px;
-  background: #0d0d13;
-  border: 1px solid rgba(229, 169, 60, 0.22);
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
   border-radius: 12px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 24px rgba(229, 169, 60, 0.08);
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08), 0 0 20px rgba(217, 119, 6, 0.06);
   overflow: hidden;
   text-align: left;
 }
 
 .mg-board__header {
   padding: 14px 22px;
-  background: rgba(18, 18, 26, 0.95);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  background: #F8FAFC;
+  border-bottom: 1px solid #E2E8F0;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -170,15 +170,15 @@
   font-size: 0.74rem;
   font-weight: 700;
   letter-spacing: 0.06em;
-  color: #34d399;
+  color: #15803D;
 }
 
 .mg-board__pulse-dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #10b981;
-  box-shadow: 0 0 8px #10b981;
+  background: #16A34A;
+  box-shadow: 0 0 8px rgba(22, 163, 74, 0.4);
   animation: mg-pulse-slow 2s infinite ease-in-out;
 }
 
@@ -187,30 +187,30 @@
   align-items: center;
   gap: 12px;
   font-size: 0.75rem;
-  color: #a1a1aa;
+  color: #64748B;
 }
 
 .mg-board__divider {
-  color: #3f3f46;
+  color: #CBD5E1;
 }
 
 .mg-board__sectors-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 1px;
-  background: rgba(255, 255, 255, 0.05);
+  background: #E2E8F0;
 }
 
 .mg-sector-panel {
-  background: #0d0d13;
+  background: #FFFFFF;
   padding: 24px;
   display: flex;
   flex-direction: column;
 }
 
 .mg-sector-panel--critical {
-  background: rgba(245, 158, 11, 0.04);
-  border-left: 3px solid #e5a93c;
+  background: #FFFBEB;
+  border-left: 3px solid #D97706;
 }
 
 .mg-sector-panel__top {
@@ -229,27 +229,27 @@
 }
 
 .mg-sector-panel__badge--normal {
-  background: rgba(16, 185, 129, 0.12);
-  color: #34d399;
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  background: rgba(22, 163, 74, 0.1);
+  color: #15803D;
+  border: 1px solid rgba(22, 163, 74, 0.25);
 }
 
 .mg-sector-panel__badge--critical {
-  background: rgba(239, 68, 68, 0.15);
-  color: #f87171;
-  border: 1px solid rgba(239, 68, 68, 0.4);
+  background: rgba(220, 38, 38, 0.1);
+  color: #DC2626;
+  border: 1px solid rgba(220, 38, 38, 0.25);
 }
 
 .mg-sector-panel__id {
   font-size: 0.75rem;
   font-weight: 700;
-  color: #71717a;
+  color: #64748B;
 }
 
 .mg-sector-panel__name {
   font-size: 1.05rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #0F172A;
   margin: 0 0 16px;
 }
 
@@ -257,10 +257,10 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  background: rgba(0, 0, 0, 0.25);
+  background: #F8FAFC;
   padding: 12px 14px;
   border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  border: 1px solid #E2E8F0;
   margin-bottom: 16px;
 }
 
@@ -272,11 +272,11 @@
 }
 
 .mg-reading-label {
-  color: #a1a1aa;
+  color: #64748B;
 }
 
 .mg-reading-val {
-  color: #ffffff;
+  color: #0F172A;
   font-weight: 600;
 }
 
@@ -285,18 +285,18 @@
   align-items: center;
   gap: 8px;
   font-size: 0.78rem;
-  color: #a1a1aa;
+  color: #64748B;
   margin-top: auto;
 }
 
 .mg-sector-panel__status--alert {
-  color: #f3ca68;
+  color: #B45309;
 }
 
 .mg-board__footer {
   padding: 14px 22px;
-  background: rgba(14, 14, 20, 0.95);
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  background: #F8FAFC;
+  border-top: 1px solid #E2E8F0;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -307,7 +307,7 @@
 .mg-board__footer-title {
   font-size: 0.8rem;
   font-weight: 600;
-  color: #a1a1aa;
+  color: #64748B;
 }
 
 .mg-board__links {
@@ -323,12 +323,12 @@
   gap: 4px;
   font-size: 0.82rem;
   font-weight: 600;
-  color: #f3ca68;
+  color: #B45309;
   text-decoration: none;
   transition: transform 0.15s ease, color 0.15s ease;
 }
 
 .mg-board__link:hover {
-  color: #ffffff;
+  color: #78350F;
   transform: translateX(2px);
 }

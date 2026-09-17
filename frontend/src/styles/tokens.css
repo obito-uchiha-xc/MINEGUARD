@@ -1,79 +1,78 @@
 :root {
   /* ==========================================================================
-     BASE NEUTRAL PALETTE (Deep Obsidian & Mission-Control Charcoal)
-     Section 2 of design.md: Comfortable Obsidian & Glowing Gold Edition
+     BASE NEUTRAL PALETTE (Clean White & High-Contrast Light Slate)
      ========================================================================== */
-  --color-bg: #0B0F14;
-  --color-bg-alt: #0E141B;
-  --color-bg-subtle: #111720;
+  --color-bg: #FFFFFF;
+  --color-bg-alt: #F8FAFC;
+  --color-bg-subtle: #F1F5F9;
   
-  --color-surface: #151A21;
-  --color-surface-hover: #1A222C;
-  --color-surface-elevated: #1E2733;
-  --color-surface-container: #151A21;
-  --color-surface-container-high: #18202A;
-  --color-surface-container-highest: #222D3B;
+  --color-surface: #FFFFFF;
+  --color-surface-hover: #F8FAFC;
+  --color-surface-elevated: #FFFFFF;
+  --color-surface-container: #FFFFFF;
+  --color-surface-container-high: #F8FAFC;
+  --color-surface-container-highest: #F1F5F9;
   /* Alias used by inline styles & hover states */
-  --color-surface-raised: #1E2733;
+  --color-surface-raised: #FFFFFF;
   
-  --color-border: #222E3C;
-  --color-border-subtle: #17212C;
-  --color-border-strong: #33455A;
-  --color-border-focus: #F3CA68;
+  --color-border: #E2E8F0;
+  --color-border-subtle: #EDF2F7;
+  --color-border-strong: #CBD5E1;
+  --color-border-focus: #B45309;
 
   /* ==========================================================================
-     TEXT TOKENS (Crisp White-Gold Blend, Silver & Warm Gold)
+     TEXT TOKENS (Deep Slate-Charcoal & Rich High-Contrast Amber-Gold)
      ========================================================================== */
-  --color-text-primary: #FFFDF8;
-  --color-text-gold: #F3CA68;
-  --color-text-secondary: #C5D1DE;
-  --color-text-tertiary: #7D8D9F;
-  --color-text-muted: #5A6777;
-  --color-text-inverse: #0B0F14;
+  --color-text-primary: #0F172A;
+  --color-text-gold: #B45309;
+  --color-text-secondary: #475569;
+  --color-text-tertiary: #64748B;
+  --color-text-muted: #94A3B8;
+  --color-text-inverse: #FFFFFF;
 
   /* ==========================================================================
-     TELEMETRY & ACTION ACCENTS (Cyan & Golden Luminescence)
+     TELEMETRY & ACTION ACCENTS (Deep Ocean Blue & Rich Gold Luminescence)
      ========================================================================== */
-  --color-cyan: #00C2FF;
-  --color-primary: #00C2FF;
-  --color-cyan-glow: rgba(0, 194, 255, 0.4);
-  --color-gold-glow: rgba(243, 202, 104, 0.45);
+  --color-cyan: #0284C7;
+  --color-primary: #0284C7;
+  --color-cyan-glow: rgba(2, 132, 199, 0.2);
+  --color-gold-glow: rgba(180, 83, 9, 0.2);
 
   /* ==========================================================================
-     SAFETY & OPERATIONAL STATE TOKENS (Intuitive Traffic-Light System)
+     SAFETY & OPERATIONAL STATE TOKENS (Calibrated WCAG Contrast for Light Theme)
      ========================================================================== */
-  --color-normal: #30D158;
-  --color-normal-muted: rgba(48, 209, 88, 0.12);
-  --color-normal-border: rgba(48, 209, 88, 0.35);
+  --color-normal: #16A34A;
+  --color-normal-muted: rgba(22, 163, 74, 0.1);
+  --color-normal-border: rgba(22, 163, 74, 0.35);
 
-  --color-warning: #FFB020;
-  --color-warning-muted: rgba(255, 176, 32, 0.12);
-  --color-warning-border: rgba(255, 176, 32, 0.35);
+  --color-warning: #D97706;
+  --color-warning-muted: rgba(217, 119, 6, 0.1);
+  --color-warning-border: rgba(217, 119, 6, 0.35);
 
-  --color-high-risk: #FF9500;
-  --color-high-risk-muted: rgba(255, 149, 0, 0.12);
-  --color-high-risk-border: rgba(255, 149, 0, 0.35);
+  --color-high-risk: #EA580C;
+  --color-high-risk-muted: rgba(234, 88, 12, 0.1);
+  --color-high-risk-border: rgba(234, 88, 12, 0.35);
 
-  --color-critical: #FF3B30;
-  --color-critical-muted: rgba(255, 59, 48, 0.14);
-  --color-critical-border: rgba(255, 59, 48, 0.45);
+  --color-critical: #DC2626;
+  --color-critical-muted: rgba(220, 38, 38, 0.1);
+  --color-critical-border: rgba(220, 38, 38, 0.35);
 
-  --color-offline: #8E8E93;
-  --color-offline-muted: rgba(142, 142, 147, 0.12);
-  --color-offline-border: rgba(142, 142, 147, 0.30);
+  --color-offline: #64748B;
+  --color-offline-muted: rgba(100, 116, 139, 0.1);
+  --color-offline-border: rgba(100, 116, 139, 0.25);
 
   /* ==========================================================================
-     GLOWING GOLDEN ACCENT (Warm Champagne & Gold Brand)
+     GLOWING GOLDEN ACCENT (Rich Warm Amber & Gold Brand for Light Mode)
      ========================================================================== */
-  --color-info: #F3CA68;
-  --color-info-hover: #E5A93C;
-  --color-info-glow: #F3CA68;
-  --color-info-light: #FFF4D9;
-  --color-info-muted: rgba(243, 202, 104, 0.14);
-  --color-info-border: rgba(243, 202, 104, 0.32);
+  --color-info: #B45309;
+  --color-info-hover: #92400E;
+  --color-info-glow: #D97706;
+  --color-info-light: #FFFBEB;
+  --color-info-muted: rgba(217, 119, 6, 0.12);
+  --color-info-border: rgba(217, 119, 6, 0.28);
 
-  /* Primary (cyan) subtle fill — for active mode toggle backgrounds */
-  --color-primary-subtle: rgba(0, 194, 255, 0.12);
+  /* Primary subtle fill — for active mode toggle backgrounds */
+  --color-primary-subtle: rgba(2, 132, 199, 0.08);
 
   /* ==========================================================================
      SEMANTIC ALIASES
@@ -82,15 +81,15 @@
   --color-bg-surface: var(--color-surface);
   --color-bg-surface-elevated: var(--color-surface-elevated);
   --color-border-strong: var(--color-border);
-  --color-accent-blue: #e5a93c;
+  --color-accent-blue: #D97706;
   --color-risk-critical: var(--color-critical);
   --color-risk-high: var(--color-high-risk);
   --color-risk-moderate: var(--color-warning);
   --color-risk-low: var(--color-normal);
 
-  /* Refined, Comfortable Soft Glows */
-  --shadow-gold: 0 0 14px rgba(229, 169, 60, 0.22);
-  --shadow-gold-lg: 0 0 24px rgba(229, 169, 60, 0.32);
+  /* Refined, Light-Theme Ambient Glows */
+  --shadow-gold: 0 4px 16px rgba(180, 83, 9, 0.14);
+  --shadow-gold-lg: 0 10px 28px rgba(180, 83, 9, 0.2);
 
   /* Z-Indices */
   --z-index-dropdown: 1000;
@@ -137,7 +136,7 @@
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', 'Roboto Mono', 'SF Mono', Consolas, monospace;
 
-  /* Font weight scale (design.md Section 3) */
+  /* Font weight scale */
   --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
@@ -152,15 +151,14 @@
   --text-body: 0.875rem;
   --text-metadata: 0.75rem;
 
-  /* Shadows */
-  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 4px 14px -2px rgba(0, 0, 0, 0.55);
-  --shadow-lg: 0 10px 28px -4px rgba(0, 0, 0, 0.7);
+  /* Refined Light-Theme Ambient Elevation Shadows */
+  --shadow-sm: 0 1px 3px 0 rgba(15, 23, 42, 0.06), 0 1px 2px -1px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 4px 16px -2px rgba(15, 23, 42, 0.08), 0 2px 6px -2px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 12px 28px -4px rgba(15, 23, 42, 0.1), 0 4px 10px -3px rgba(15, 23, 42, 0.05);
 
   /* Transitions */
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-base: 200ms cubic-bezier(0.4, 0, 0.2, 1);
-  /* Alias used across many card/tab components */
   --transition-normal: 200ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-smooth: 320ms cubic-bezier(0.16, 1, 0.3, 1);
   --transition-spring: 450ms cubic-bezier(0.34, 1.4, 0.64, 1);

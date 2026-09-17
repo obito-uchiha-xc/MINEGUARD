@@ -82,7 +82,7 @@
 }
 .mg-btn--ghost:hover:not(:disabled) {
   background-color: var(--color-surface-hover);
-  color: #fde047;
+  color: var(--color-info-hover);
 }
 
 /* Danger */
@@ -104,9 +104,9 @@
 }
 .mg-btn--outline:hover:not(:disabled) {
   border-color: var(--color-info);
-  color: #fde047;
+  color: var(--color-info);
   background-color: rgba(245, 158, 11, 0.08);
-  box-shadow: 0 0 14px rgba(245, 158, 11, 0.25);
+  box-shadow: 0 0 14px rgba(245, 158, 11, 0.15);
 }
 
 .mg-btn__icon {

@@ -71,7 +71,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  border-top: 1px dashed rgba(38, 53, 69, 0.6);
+  border-top: 1px dashed rgba(203, 213, 225, 0.8);
   display: flex;
   justify-content: flex-end;
 }
@@ -111,7 +111,7 @@
   width: 100%;
   max-width: 32px;
   height: 100%;
-  background-color: rgba(11, 17, 26, 0.5);
+  background-color: var(--color-bg-subtle);
   border-radius: 4px;
   display: flex;
   align-items: flex-end;

@@ -279,7 +279,7 @@ export const NodesPage: React.FC = () => {
               leftIcon={<Plus size={15} />}
               onClick={() => setIsAddModalOpen(true)}
             >
-              + Add Node
+              Add Node
             </Button>
           </div>
         }

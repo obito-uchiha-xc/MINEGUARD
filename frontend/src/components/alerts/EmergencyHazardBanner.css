@@ -4,11 +4,11 @@
   position: relative;
   z-index: 75;
   width: 100%;
-  background: radial-gradient(ellipse 75% 100% at 20% 50%, rgba(220, 38, 38, 0.14) 0%, rgba(20, 11, 13, 0.98) 100%);
+  background: linear-gradient(90deg, #991b1b 0%, #b91c1c 50%, #7f1d1d 100%);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(239, 68, 68, 0.45);
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(239, 68, 68, 0.6);
+  box-shadow: 0 4px 20px rgba(185, 28, 28, 0.25);
   transition: all 0.3s ease;
   overflow: hidden;
 }
@@ -43,8 +43,8 @@
 }
 
 .mg-hazard-banner--sounding {
-  background: radial-gradient(ellipse 80% 120% at 25% 50%, rgba(220, 38, 38, 0.22) 0%, rgba(26, 8, 10, 0.98) 100%);
-  box-shadow: 0 6px 32px rgba(239, 68, 68, 0.35), inset 0 0 20px rgba(239, 68, 68, 0.12);
+  background: linear-gradient(90deg, #b91c1c 0%, #dc2626 50%, #991b1b 100%);
+  box-shadow: 0 4px 24px rgba(220, 38, 38, 0.35);
   animation: mgBannerGlow 2s ease-in-out infinite alternate;
 }
 
@@ -58,9 +58,9 @@
 }
 
 .mg-hazard-banner--silenced {
-  background: radial-gradient(ellipse 75% 100% at 20% 50%, rgba(217, 119, 6, 0.12) 0%, rgba(22, 18, 12, 0.98) 100%);
-  border-bottom: 1px solid rgba(245, 158, 11, 0.45);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(90deg, #92400e 0%, #b45309 50%, #78350f 100%);
+  border-bottom: 1px solid rgba(245, 158, 11, 0.6);
+  box-shadow: 0 4px 20px rgba(180, 83, 9, 0.25);
 }
 
 .mg-hazard-banner--silenced .mg-hazard-banner__stripe {
@@ -297,10 +297,10 @@
   display: inline-block;
   padding: 1px 5px;
   border-radius: 3px;
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(255, 255, 255, 0.25);
   font-size: 10px;
   font-family: var(--font-mono, monospace);
-  color: rgba(255, 255, 255, 0.85);
+  color: #ffffff;
 }
 
 @keyframes mgButtonPulse {
@@ -314,27 +314,27 @@
 
 /* UNLOCK BUTTON */
 .mg-hazard-btn--unlock {
-  background: rgba(245, 158, 11, 0.2);
-  border-color: #f59e0b;
-  color: #fcd34d;
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
   animation: mgButtonPulse 1.2s ease-in-out infinite alternate;
 }
 
 .mg-hazard-btn--unlock:hover {
-  background: rgba(245, 158, 11, 0.35);
+  background: rgba(255, 255, 255, 0.3);
   color: #ffffff;
 }
 
 /* RE-ARM BUTTON */
 .mg-hazard-btn--rearm {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
-  color: #fcd34d;
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
 }
 
 .mg-hazard-btn--rearm:hover {
-  background: rgba(245, 158, 11, 0.15);
-  border-color: #f59e0b;
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
   color: #ffffff;
 }
 

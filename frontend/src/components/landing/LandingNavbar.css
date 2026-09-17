@@ -4,11 +4,11 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(9, 9, 12, 0.85);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(229, 169, 60, 0.15);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
@@ -33,25 +33,23 @@
   flex-shrink: 0;
 }
 
-/* Dark cyan tile — cyan for tech/active accent */
 .mg-landing-nav__logo-box {
   width: 42px;
   height: 42px;
   border-radius: 10px;
-  background: linear-gradient(135deg, rgba(0, 194, 255, 0.14) 0%, rgba(0, 30, 45, 0.85) 100%);
-  border: 1px solid rgba(0, 194, 255, 0.38);
-  box-shadow: 0 0 14px rgba(0, 194, 255, 0.18), inset 0 1px 0 rgba(0, 194, 255, 0.08);
+  background: linear-gradient(135deg, rgba(2, 132, 199, 0.1) 0%, rgba(2, 132, 199, 0.04) 100%);
+  border: 1px solid rgba(2, 132, 199, 0.3);
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Helmet icon stays amber/gold — safety emphasis */
-  color: #e5a93c;
+  color: #B45309;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .mg-landing-nav__brand:hover .mg-landing-nav__logo-box {
   transform: translateY(-1px);
-  box-shadow: 0 0 22px rgba(0, 194, 255, 0.32), inset 0 1px 0 rgba(0, 194, 255, 0.12);
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.25);
 }
 
 .mg-landing-nav__brand-info {
@@ -65,12 +63,12 @@
   gap: 8px;
 }
 
-/* MINEGUARD — warm metallic gold gradient */
+/* MINEGUARD — warm metallic gold gradient on light */
 .mg-landing-nav__brand-name {
   font-size: 1.15rem;
   font-weight: 700;
   letter-spacing: -0.02em;
-  background: linear-gradient(90deg, #FFFFFF 0%, #FDF3DA 45%, #F3CA68 100%);
+  background: linear-gradient(90deg, #0F172A 0%, #92400E 50%, #B45309 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -83,14 +81,14 @@
   letter-spacing: 0.06em;
   padding: 2px 6px;
   border-radius: 4px;
-  background: rgba(229, 169, 60, 0.12);
-  color: #e5a93c;
-  border: 1px solid rgba(229, 169, 60, 0.3);
+  background: rgba(217, 119, 6, 0.1);
+  color: #B45309;
+  border: 1px solid rgba(217, 119, 6, 0.25);
 }
 
 .mg-landing-nav__brand-tag {
   font-size: 0.72rem;
-  color: #a1a1aa;
+  color: #64748B;
   margin-top: 1px;
 }
 
@@ -110,7 +108,7 @@
 .mg-landing-nav__link {
   font-size: 0.88rem;
   font-weight: 500;
-  color: #a1a1aa;
+  color: #475569;
   text-decoration: none;
   transition: color 0.2s ease;
   position: relative;
@@ -118,7 +116,7 @@
 }
 
 .mg-landing-nav__link:hover {
-  color: #f3ca68;
+  color: #B45309;
 }
 
 /* Actions */
@@ -134,11 +132,11 @@
   gap: 7px;
   padding: 6px 12px;
   border-radius: 9999px;
-  background: rgba(16, 185, 129, 0.08);
-  border: 1px solid rgba(16, 185, 129, 0.25);
+  background: rgba(22, 163, 74, 0.08);
+  border: 1px solid rgba(22, 163, 74, 0.25);
   font-size: 0.75rem;
   font-weight: 600;
-  color: #34d399;
+  color: #15803D;
 }
 
 @media (min-width: 640px) {
@@ -148,7 +146,7 @@
 }
 
 .mg-landing-nav__pulse-icon {
-  color: #10b981;
+  color: #16A34A;
   animation: mg-pulse-slow 2.4s ease-in-out infinite;
 }
 
@@ -166,17 +164,17 @@
   font-size: 0.85rem;
   font-weight: 600;
   text-decoration: none;
-  color: #09090c;
-  background: linear-gradient(135deg, #e5a93c 0%, #d49228 100%);
-  border: 1px solid rgba(229, 169, 60, 0.6);
-  box-shadow: 0 2px 10px rgba(229, 169, 60, 0.28);
+  color: #FFFFFF;
+  background: linear-gradient(135deg, #D97706 0%, #B45309 100%);
+  border: 1px solid rgba(180, 83, 9, 0.4);
+  box-shadow: 0 2px 10px rgba(180, 83, 9, 0.25);
   transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, filter 0.2s ease;
 }
 
 .mg-landing-nav__cta-btn:hover {
   transform: translateY(-1.5px);
-  box-shadow: 0 4px 18px rgba(229, 169, 60, 0.45);
-  filter: brightness(1.06);
+  box-shadow: 0 4px 18px rgba(180, 83, 9, 0.35);
+  filter: brightness(1.05);
 }
 
 .mg-landing-nav__toggle {
@@ -186,9 +184,9 @@
   width: 40px;
   height: 40px;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.04);
-  color: #f5f5f7;
+  border: 1px solid #CBD5E1;
+  background: #F8FAFC;
+  color: #0F172A;
   cursor: pointer;
 }
 
@@ -203,18 +201,19 @@
   display: flex;
   flex-direction: column;
   padding: 16px 24px 24px;
-  background: #0d0d12;
-  border-bottom: 1px solid rgba(229, 169, 60, 0.2);
+  background: #FFFFFF;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
   gap: 12px;
 }
 
 .mg-landing-nav__mobile-link {
   padding: 10px 0;
-  color: #d4d4d8;
+  color: #334155;
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 500;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid #F1F5F9;
 }
 
 .mg-landing-nav__mobile-actions {

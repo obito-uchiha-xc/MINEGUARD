@@ -15,7 +15,7 @@
 .mg-alert-card:hover {
   transform: translateY(-2px);
   background-color: var(--color-bg-surface-elevated);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08);
 }
 
 .mg-alert-card:focus-visible {
@@ -162,9 +162,9 @@
 }
 
 .mg-alert-card__status-pill--acknowledged {
-  background-color: rgba(229, 169, 60, 0.12);
-  color: #f3ca68;
-  border: 1px solid rgba(229, 169, 60, 0.3);
+  background-color: rgba(217, 119, 6, 0.12);
+  color: #b45309;
+  border: 1px solid rgba(217, 119, 6, 0.3);
 }
 
 .mg-alert-card__status-pill--investigating {
@@ -211,12 +211,12 @@
 
 .sensor-chip {
   font-size: var(--font-size-2xs);
-  color: #f3ca68;
-  background-color: rgba(229, 169, 60, 0.1);
-  border: 1px solid rgba(229, 169, 60, 0.25);
+  color: #b45309;
+  background-color: rgba(180, 83, 9, 0.08);
+  border: 1px solid rgba(180, 83, 9, 0.25);
   padding: 2px 7px;
   border-radius: var(--radius-sm);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .sensor-count-tag {

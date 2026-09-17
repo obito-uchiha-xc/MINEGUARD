@@ -8,6 +8,7 @@ import { LandingFeatures } from '../components/landing/LandingFeatures';
 import { LandingHowItWorks } from '../components/landing/LandingHowItWorks';
 import { LandingArchitecture } from '../components/landing/LandingArchitecture';
 import { LandingFooter } from '../components/landing/LandingFooter';
+import { ContourFieldBackground } from '../components/landing/ContourFieldBackground';
 import { ScrollProgressBar } from '../components/ui/ScrollProgressBar';
 import './LandingPage.css';
 
@@ -51,6 +52,9 @@ export const LandingPage: React.FC = () => {
 
   return (
     <div className="mg-landing-page" ref={containerRef}>
+      {/* Procedural Topographic Contour Background — Fixed Full-Viewport */}
+      <ContourFieldBackground className="mg-contour-field--global" />
+
       {/* Smooth Golden Scroll Progress Bar */}
       <ScrollProgressBar />
 

@@ -19,7 +19,7 @@
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.08em;
-  color: #f3ca68;
+  color: #B45309;
   margin-bottom: 14px;
 }
 
@@ -27,13 +27,13 @@
   font-size: clamp(1.9rem, 3.5vw, 2.8rem);
   font-weight: 800;
   letter-spacing: -0.02em;
-  color: #ffffff;
+  color: #0F172A;
   margin: 0 0 16px;
 }
 
 .mg-landing-arch__subtitle {
   font-size: 1.05rem;
-  color: #a1a1aa;
+  color: #475569;
   line-height: 1.6;
   margin: 0;
 }
@@ -45,43 +45,48 @@
 }
 
 .mg-arch-card {
-  background: #0e0e14;
-  border: 1px solid rgba(229, 169, 60, 0.14);
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(14px) saturate(1.4);
+  -webkit-backdrop-filter: blur(14px) saturate(1.4);
+  border: 1px solid rgba(226, 232, 240, 0.6);
   border-radius: 14px;
   padding: 28px 24px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .mg-arch-card:hover {
   transform: translateY(-3px);
-  border-color: rgba(229, 169, 60, 0.35);
+  border-color: #D97706;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
 }
 
 .mg-arch-card__icon {
   width: 42px;
   height: 42px;
   border-radius: 10px;
-  background: rgba(229, 169, 60, 0.08);
-  border: 1px solid rgba(229, 169, 60, 0.22);
+  background: rgba(217, 119, 6, 0.08);
+  border: 1px solid rgba(217, 119, 6, 0.22);
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #B45309;
   margin-bottom: 18px;
 }
 
 .mg-arch-card__title {
   font-size: 1.1rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #0F172A;
   margin: 0 0 8px;
 }
 
 .mg-arch-card__desc {
   font-size: 0.85rem;
-  color: #a1a1aa;
+  color: #475569;
   line-height: 1.55;
   margin: 0;
 }

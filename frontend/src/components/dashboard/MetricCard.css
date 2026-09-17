@@ -6,7 +6,7 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
@@ -15,7 +15,7 @@
 .mg-metric-card:hover {
   transform: translateY(-2px);
   border-color: var(--color-border-strong);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.55);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
   background-color: var(--color-surface-hover);
 }
 
@@ -133,27 +133,27 @@
   font-weight: 600;
   font-family: var(--font-mono, monospace);
   letter-spacing: 0.01em;
-  background-color: rgba(255, 255, 255, 0.04);
+  background-color: rgba(15, 23, 42, 0.04);
 }
 
 .mg-metric-card__change--increase-risk {
-  color: #fb923c;
-  background-color: rgba(249, 115, 22, 0.12);
+  color: #C2410C;
+  background-color: rgba(234, 88, 12, 0.1);
 }
 
 .mg-metric-card__change--moderate-risk {
-  color: #fbbf24;
-  background-color: rgba(245, 158, 11, 0.12);
+  color: #B45309;
+  background-color: rgba(217, 119, 6, 0.1);
 }
 
 .mg-metric-card__change--good {
-  color: #34d399;
-  background-color: rgba(16, 185, 129, 0.12);
+  color: #15803D;
+  background-color: rgba(22, 163, 74, 0.1);
 }
 
 .mg-metric-card__change--neutral {
-  color: #38bdf8;
-  background-color: rgba(56, 189, 248, 0.12);
+  color: #0369A1;
+  background-color: rgba(2, 132, 199, 0.1);
 }
 
 .mg-metric-card__secondary {

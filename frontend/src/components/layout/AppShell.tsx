@@ -8,6 +8,7 @@ import { TopBar } from './TopBar';
 import { Footer } from './Footer';
 import { ScrollProgressBar } from '../ui/ScrollProgressBar';
 import { EmergencyHazardBanner } from '../alerts/EmergencyHazardBanner';
+import { ContourFieldBackground } from '../landing/ContourFieldBackground';
 import './AppShell.css';
 
 export interface AppShellProps {
@@ -77,6 +78,9 @@ export const AppShell: React.FC<AppShellProps> = ({ children }) => {
 
   return (
     <div className="mg-app-shell">
+      {/* GLOBAL PROCEDURAL TOPOGRAPHIC CONTOUR BACKGROUND */}
+      <ContourFieldBackground className="mg-contour-field--global" />
+
       {/* SMOOTH GOLDEN SCROLL PROGRESS BAR */}
       <ScrollProgressBar containerRef={mainRef} />
 

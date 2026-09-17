@@ -1,20 +1,13 @@
 /* ==========================================================================
    LANDING PAGE — Full-Viewport Immersive Container
-   Deep obsidian atmospheric background with luminous radial washes.
+   Clean luxury white background with luminous champagne & sky washes.
    Lenis operates on the root window for this page (no wrapper scoping).
    ========================================================================== */
 
 .mg-landing-page {
   width: 100%;
   min-height: 100vh;
-  background-color: var(--color-bg);
-  /* Atmospheric cyan and gold radial washes per design.md Section 2 */
-  background-image:
-    radial-gradient(ellipse 80% 40% at 50% -8%, rgba(0, 194, 255, 0.06), transparent 70%),
-    radial-gradient(circle at 92% 92%, rgba(243, 202, 104, 0.05), transparent 45%),
-    radial-gradient(circle at 8% 80%, rgba(0, 194, 255, 0.03), transparent 40%),
-    linear-gradient(180deg, #0B0F14 0%, #0E141B 60%, #0B0F14 100%);
-  background-attachment: fixed;
+  background-color: transparent;
   color: var(--color-text-primary);
   display: flex;
   flex-direction: column;
@@ -40,7 +33,7 @@
 .mg-landing-section-divider {
   width: 100%;
   height: 1px;
-  background: linear-gradient(90deg, transparent 0%, rgba(243, 202, 104, 0.15) 35%, rgba(0, 194, 255, 0.15) 65%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(217, 119, 6, 0.2) 35%, rgba(2, 132, 199, 0.15) 65%, transparent 100%);
   margin: 0;
 }
 
@@ -74,15 +67,15 @@
   opacity: 0.6;
 }
 
-/* Subtle noise texture overlay (optional, improves depth perception) */
+/* Subtle noise texture overlay */
 .mg-landing-page::after {
   content: '';
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-  opacity: 0.3;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.02'/%3E%3C/svg%3E");
+  opacity: 0.2;
 }
 
 /* All landing content must be above the after pseudo-element */
@@ -106,7 +99,7 @@
   }
 }
 
-/* Slow ambient keyframe for background — used by LandingHero pulse dots */
+/* Slow ambient keyframe for background */
 @keyframes mg-pulse-slow {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.5; transform: scale(1.15); }

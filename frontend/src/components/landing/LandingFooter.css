@@ -1,6 +1,8 @@
 .mg-landing-footer {
-  background: #08080b;
-  border-top: 1px solid rgba(229, 169, 60, 0.15);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(14px) saturate(1.4);
+  -webkit-backdrop-filter: blur(14px) saturate(1.4);
+  border-top: 1px solid rgba(226, 232, 240, 0.45);
   padding: 64px 0 32px;
 }
 
@@ -40,30 +42,31 @@
   width: 36px;
   height: 36px;
   border-radius: 8px;
-  background: rgba(229, 169, 60, 0.1);
-  border: 1px solid rgba(229, 169, 60, 0.25);
+  background: rgba(217, 119, 6, 0.08);
+  border: 1px solid rgba(217, 119, 6, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #B45309;
 }
 
 .mg-landing-footer__name {
   font-size: 1.15rem;
   font-weight: 700;
-  color: #f5f5f7;
+  color: #0F172A;
 }
 
 .mg-landing-footer__tagline {
   font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.05em;
-  color: #e5a93c;
+  color: #B45309;
   margin: 0 0 10px;
 }
 
 .mg-landing-footer__bio {
   font-size: 0.82rem;
-  color: #a1a1aa;
+  color: #64748B;
   line-height: 1.6;
   max-width: 340px;
   margin: 0;
@@ -74,7 +77,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #ffffff;
+  color: #0F172A;
   margin-bottom: 18px;
   display: block;
 }
@@ -87,20 +90,23 @@
 
 .mg-landing-footer__link {
   font-size: 0.85rem;
-  color: #a1a1aa;
+  color: #475569;
   text-decoration: none;
   transition: color 0.15s ease;
 }
 
 .mg-landing-footer__link:hover {
-  color: #f3ca68;
+  color: #B45309;
 }
 
 .mg-landing-footer__status-box {
-  background: rgba(18, 18, 26, 0.7);
-  border: 1px solid rgba(16, 185, 129, 0.25);
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(16px) saturate(1.5);
+  -webkit-backdrop-filter: blur(16px) saturate(1.5);
+  border: 1px solid rgba(22, 163, 74, 0.2);
   border-radius: 12px;
   padding: 16px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
 }
 
 .mg-landing-footer__status-row {
@@ -114,25 +120,25 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #10b981;
-  box-shadow: 0 0 8px #10b981;
+  background: #16A34A;
+  box-shadow: 0 0 8px rgba(22, 163, 74, 0.4);
 }
 
 .mg-landing-footer__status-title {
   font-size: 0.82rem;
   font-weight: 700;
-  color: #34d399;
+  color: #15803D;
 }
 
 .mg-landing-footer__status-detail {
   font-size: 0.78rem;
-  color: #a1a1aa;
+  color: #64748B;
   line-height: 1.45;
   margin: 0;
 }
 
 .mg-landing-footer__bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid rgba(226, 232, 240, 0.35);
   padding-top: 24px;
   display: flex;
   flex-wrap: wrap;
@@ -140,12 +146,12 @@
   justify-content: space-between;
   gap: 16px;
   font-size: 0.78rem;
-  color: #71717a;
+  color: #64748B;
 }
 
 .mg-landing-footer__compliance {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #a1a1aa;
+  color: #64748B;
 }

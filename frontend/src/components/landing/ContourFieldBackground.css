@@ -1,0 +1,70 @@
+/* ==========================================================================
+   CONTOUR FIELD BACKGROUND — Topographic Procedural WebGL Canvas
+   Rendered with Three.js & custom GLSL FBM Simplex Noise.
+   Themed for MINEGUARD's Clean White & Metallic Amber-Gold aesthetic.
+   ========================================================================== */
+
+.mg-contour-field {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  opacity: 0.9;
+  transition: opacity 0.5s ease;
+}
+
+.mg-contour-field__canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+/* Soft top & bottom fades so contours dissolve smoothly into page flow */
+.mg-contour-field::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(180deg, #FFFFFF 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.mg-contour-field::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 140px;
+  background: linear-gradient(0deg, #FFFFFF 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ==========================================================================
+   GLOBAL VARIANT — Fixed full-viewport for AppShell usage.
+   Covers the entire viewport behind sidebar, topbar, and all pages.
+   ========================================================================== */
+
+.mg-contour-field.mg-contour-field--global {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  opacity: 0.55;
+}
+
+/* No edge fades on global — the sidebar/topbar/content handle their own
+   glass layering above this background */
+.mg-contour-field.mg-contour-field--global::before,
+.mg-contour-field.mg-contour-field--global::after {
+  display: none;
+}
+

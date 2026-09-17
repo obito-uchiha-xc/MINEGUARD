@@ -1,10 +1,12 @@
-/* CurrentMineRisk.css */
+/* CurrentMineRisk.css — Light theme with glassmorphism */
 
 .mg-risk-panel {
-  background-color: var(--color-surface, #18181b);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(16px) saturate(1.5);
+  -webkit-backdrop-filter: blur(16px) saturate(1.5);
+  border: 1px solid rgba(226, 232, 240, 0.6);
   border-radius: var(--radius-lg, 10px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
   display: flex;
   flex-direction: column;
   padding: 14px 16px;
@@ -15,7 +17,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.5);
   padding-bottom: 8px;
 }
 
@@ -26,13 +28,13 @@
 }
 
 .mg-risk-panel__icon {
-  color: #f97316;
+  color: #B45309;
 }
 
 .mg-risk-panel__title {
   font-size: 11px;
   font-weight: 700;
-  color: var(--color-text-primary, #ffffff);
+  color: #0F172A;
   margin: 0;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -62,14 +64,14 @@
 .mg-risk-panel__score {
   font-size: 2.1rem;
   font-weight: 800;
-  color: #f97316;
+  color: #B45309;
   line-height: 1;
-  text-shadow: 0 0 16px rgba(249, 115, 22, 0.4);
+  text-shadow: none;
 }
 
 .mg-risk-panel__score-max {
   font-size: 12px;
-  color: var(--color-text-muted, #71717a);
+  color: #64748B;
   font-family: var(--font-mono, monospace);
 }
 
@@ -79,7 +81,7 @@
   gap: 4px;
   font-size: 11px;
   font-weight: 600;
-  color: #fb923c;
+  color: #92400E;
   font-family: var(--font-mono, monospace);
 }
 
@@ -92,7 +94,7 @@
 
 .mg-risk-panel__spark-label {
   font-size: 9px;
-  color: var(--color-text-muted, #71717a);
+  color: #64748B;
   font-weight: 600;
   letter-spacing: 0.05em;
 }
@@ -127,33 +129,33 @@
   font-weight: 700;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.4);
-  background: rgba(255, 255, 255, 0.04);
+  color: #94A3B8;
+  background: rgba(241, 245, 249, 0.7);
   transition: all 0.2s ease;
 }
 
 .mg-risk-panel__segment--normal {
-  border: 1px solid rgba(16, 185, 129, 0.2);
+  border: 1px solid rgba(22, 163, 74, 0.25);
 }
 
 .mg-risk-panel__segment--warning {
-  border: 1px solid rgba(245, 158, 11, 0.2);
+  border: 1px solid rgba(217, 119, 6, 0.25);
 }
 
 .mg-risk-panel__segment--high {
-  border: 1px solid rgba(249, 115, 22, 0.3);
+  border: 1px solid rgba(234, 88, 12, 0.3);
 }
 
 .mg-risk-panel__segment--critical {
-  border: 1px solid rgba(239, 68, 68, 0.2);
+  border: 1px solid rgba(220, 38, 38, 0.25);
 }
 
 /* ACTIVE TIER HIGHLIGHT */
 .mg-risk-panel__segment.is-active {
-  background: rgba(249, 115, 22, 0.25);
-  border-color: #f97316;
-  color: #ffffff;
-  box-shadow: 0 0 10px rgba(249, 115, 22, 0.5);
+  background: rgba(217, 119, 6, 0.18);
+  border-color: #D97706;
+  color: #92400E;
+  box-shadow: 0 0 10px rgba(217, 119, 6, 0.25);
 }
 
 .mg-risk-panel__active-pin {
@@ -161,22 +163,22 @@
   bottom: -3px;
   width: 5px;
   height: 5px;
-  background-color: #ffffff;
+  background-color: #D97706;
   border-radius: 50%;
-  box-shadow: 0 0 6px #f97316;
+  box-shadow: 0 0 6px rgba(217, 119, 6, 0.5);
 }
 
 .mg-risk-panel__threshold-legend {
   display: flex;
   justify-content: space-between;
   font-size: 9px;
-  color: var(--color-text-muted, #71717a);
+  color: #64748B;
   font-family: var(--font-mono, monospace);
   padding: 0 2px;
 }
 
 .mg-risk-panel__threshold-legend .text-high-risk {
-  color: #fb923c;
+  color: #B45309;
   font-weight: 700;
 }
 
@@ -190,7 +192,7 @@
 .mg-risk-panel__indicators-title {
   font-size: 10px;
   font-weight: 700;
-  color: var(--color-text-muted, #a1a1aa);
+  color: #64748B;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
@@ -207,15 +209,15 @@
   gap: 6px;
   padding: 5px 8px;
   border-radius: 4px;
-  background-color: rgba(249, 115, 22, 0.05);
-  border-left: 2px solid rgba(249, 115, 22, 0.5);
+  background-color: rgba(255, 255, 255, 0.6);
+  border-left: 2px solid rgba(217, 119, 6, 0.5);
   font-size: 11px;
-  color: var(--color-text-secondary, #d4d4d8);
+  color: #334155;
   line-height: 1.35;
 }
 
 .mg-risk-panel__chevron {
-  color: #f97316;
+  color: #B45309;
   flex-shrink: 0;
   margin-top: 1px;
 }
@@ -226,12 +228,12 @@
   align-items: center;
   gap: 6px;
   padding-top: 6px;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(226, 232, 240, 0.5);
   font-size: 10px;
-  color: var(--color-text-muted, #71717a);
+  color: #64748B;
 }
 
 .mg-risk-panel__note-icon {
-  color: #f59e0b;
+  color: #D97706;
   flex-shrink: 0;
 }

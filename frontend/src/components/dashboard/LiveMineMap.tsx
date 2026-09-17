@@ -71,7 +71,7 @@ export const LiveMineMap: React.FC<LiveMineMapProps> = ({
         >
           <defs>
             <pattern id="mine-grid" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(38, 53, 69, 0.45)" strokeWidth="0.8" />
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(203, 213, 225, 0.6)" strokeWidth="0.8" />
             </pattern>
             <radialGradient id="hazard-gradient" cx="62%" cy="44%" r="28%">
               <stop offset="0%" stopColor="rgba(239, 68, 68, 0.18)" />

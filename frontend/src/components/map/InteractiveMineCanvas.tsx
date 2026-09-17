@@ -121,13 +121,13 @@ export const InteractiveMineCanvas: React.FC<InteractiveMineCanvasProps> = ({
           aria-hidden="true"
         >
           <defs>
-            {/* Dark GIS Topographic Grid */}
+            {/* GIS Topographic Grid */}
             <pattern id="gis-grid-minor" width="25" height="25" patternUnits="userSpaceOnUse">
-              <path d="M 25 0 L 0 0 0 25" fill="none" stroke="rgba(38, 53, 69, 0.3)" strokeWidth="0.5" />
+              <path d="M 25 0 L 0 0 0 25" fill="none" stroke="rgba(203, 213, 225, 0.5)" strokeWidth="0.5" />
             </pattern>
             <pattern id="gis-grid-major" width="100" height="100" patternUnits="userSpaceOnUse">
               <rect width="100" height="100" fill="url(#gis-grid-minor)" />
-              <path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(59, 130, 246, 0.18)" strokeWidth="0.8" />
+              <path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(2, 132, 199, 0.2)" strokeWidth="0.8" />
             </pattern>
 
             {/* Spatial Risk Heat Gradients */}
@@ -152,7 +152,7 @@ export const InteractiveMineCanvas: React.FC<InteractiveMineCanvasProps> = ({
           </defs>
 
           {/* BACKGROUND GRID */}
-          <rect width="1000" height="640" fill="#04080e" />
+          <rect width="1000" height="640" fill="#f8fafc" />
           <rect width="1000" height="640" fill="url(#gis-grid-major)" />
 
           {/* LAYER 1: MINE BOUNDARY */}
@@ -177,11 +177,11 @@ export const InteractiveMineCanvas: React.FC<InteractiveMineCanvasProps> = ({
               {/* Panel A: Haulage North */}
               <polygon
                 points="90,100 360,80 360,260 90,260"
-                fill="rgba(59, 130, 246, 0.03)"
-                stroke="rgba(38, 53, 69, 0.7)"
+                fill="rgba(2, 132, 199, 0.04)"
+                stroke="rgba(203, 213, 225, 0.8)"
                 strokeWidth="1.2"
               />
-              <text x="105" y="125" fill="#aab6c4" fontSize="11" fontWeight="600" fontFamily="var(--font-mono)">
+              <text x="105" y="125" fill="#475569" fontSize="11" fontWeight="600" fontFamily="var(--font-mono)">
                 PANEL A &mdash; MAIN HAULAGE
               </text>
 
@@ -193,18 +193,18 @@ export const InteractiveMineCanvas: React.FC<InteractiveMineCanvasProps> = ({
                 strokeWidth="1.5"
                 strokeDasharray="3 3"
               />
-              <text x="380" y="115" fill="#f97316" fontSize="11" fontWeight="700" fontFamily="var(--font-mono)">
+              <text x="380" y="115" fill="#ea580c" fontSize="11" fontWeight="700" fontFamily="var(--font-mono)">
                 PANEL B &mdash; PRODUCTION STOPE 4B [ELEVATED DEFORMATION]
               </text>
 
               {/* Panel C: East Incline */}
               <polygon
                 points="720,110 910,240 890,440 720,380"
-                fill="rgba(59, 130, 246, 0.03)"
-                stroke="rgba(38, 53, 69, 0.7)"
+                fill="rgba(2, 132, 199, 0.04)"
+                stroke="rgba(203, 213, 225, 0.8)"
                 strokeWidth="1.2"
               />
-              <text x="740" y="150" fill="#aab6c4" fontSize="11" fontWeight="600" fontFamily="var(--font-mono)">
+              <text x="740" y="150" fill="#475569" fontSize="11" fontWeight="600" fontFamily="var(--font-mono)">
                 PANEL C &mdash; EAST INCLINE
               </text>
 
@@ -212,21 +212,21 @@ export const InteractiveMineCanvas: React.FC<InteractiveMineCanvasProps> = ({
               <polygon
                 points="420,340 720,340 700,560 420,560"
                 fill="rgba(249, 115, 22, 0.04)"
-                stroke="rgba(38, 53, 69, 0.7)"
+                stroke="rgba(203, 213, 225, 0.8)"
                 strokeWidth="1.2"
               />
-              <text x="440" y="365" fill="#aab6c4" fontSize="11" fontWeight="600" fontFamily="var(--font-mono)">
+              <text x="440" y="365" fill="#475569" fontSize="11" fontWeight="600" fontFamily="var(--font-mono)">
                 PANEL D &mdash; DEEP DRIFT SOUTH
               </text>
 
               {/* Panel E: Lower Sump & Intake */}
               <polygon
                 points="110,260 420,260 420,560 110,460"
-                fill="rgba(59, 130, 246, 0.03)"
-                stroke="rgba(38, 53, 69, 0.7)"
+                fill="rgba(2, 132, 199, 0.04)"
+                stroke="rgba(203, 213, 225, 0.8)"
                 strokeWidth="1.2"
               />
-              <text x="130" y="285" fill="#aab6c4" fontSize="11" fontWeight="600" fontFamily="var(--font-mono)">
+              <text x="130" y="285" fill="#475569" fontSize="11" fontWeight="600" fontFamily="var(--font-mono)">
                 PANEL E &mdash; DRAINAGE SUMP & AIRWAY
               </text>
             </g>
@@ -238,14 +238,14 @@ export const InteractiveMineCanvas: React.FC<InteractiveMineCanvasProps> = ({
             <path
               d="M 120 180 L 320 160 L 580 220 L 800 240 L 880 340"
               fill="none"
-              stroke="rgba(170, 182, 196, 0.28)"
+              stroke="rgba(203, 213, 225, 0.6)"
               strokeWidth="28"
               strokeLinecap="round"
             />
             <path
               d="M 120 180 L 320 160 L 580 220 L 800 240 L 880 340"
               fill="none"
-              stroke="rgba(59, 130, 246, 0.45)"
+              stroke="rgba(2, 132, 199, 0.45)"
               strokeWidth="2"
               strokeDasharray="8 6"
             />
@@ -254,7 +254,7 @@ export const InteractiveMineCanvas: React.FC<InteractiveMineCanvasProps> = ({
             <path
               d="M 320 160 L 360 420 L 620 480 L 780 440"
               fill="none"
-              stroke="rgba(170, 182, 196, 0.22)"
+              stroke="rgba(203, 213, 225, 0.5)"
               strokeWidth="20"
               strokeLinecap="round"
             />

@@ -45,8 +45,8 @@
   color: var(--color-text-primary);
 }
 .mg-icon-btn--secondary:hover:not(:disabled) {
-  background-color: #202f40;
-  border-color: #3b5066;
+  background-color: var(--color-surface-hover);
+  border-color: var(--color-border-strong);
 }
 
 .mg-icon-btn--primary {
