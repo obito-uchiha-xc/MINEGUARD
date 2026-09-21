@@ -42,7 +42,6 @@ export const ContourFieldBackground: React.FC<ContourFieldBackgroundProps> = ({
     const uniforms = {
       u_resolution: { value: new THREE.Vector2(container.clientWidth, container.clientHeight) },
       u_time: { value: 0.0 },
-      u_scroll: { value: 0.0 },
       u_scale: { value: scale },
       u_levels: { value: levels },
       u_lineWidth: { value: lineWidth },
@@ -62,7 +61,6 @@ export const ContourFieldBackground: React.FC<ContourFieldBackgroundProps> = ({
 
       uniform vec2 u_resolution;
       uniform float u_time;
-      uniform float u_scroll;
       uniform float u_scale;
       uniform float u_levels;
       uniform float u_lineWidth;
@@ -116,8 +114,8 @@ export const ContourFieldBackground: React.FC<ContourFieldBackgroundProps> = ({
         vec2 aspect = vec2(u_resolution.x / max(u_resolution.y, 1.0), 1.0);
         vec2 coord = (vUv - 0.5) * aspect;
 
-        // Parallax + slow continuous drift
-        vec2 samplePos = coord * u_scale + vec2(u_time * 0.015, u_time * 0.008 + u_scroll * 0.00025);
+        // Continuous slow organic drift, pivoted in place without scroll movement
+        vec2 samplePos = coord * u_scale + vec2(u_time * 0.015, u_time * 0.008);
 
         // Normalized height from FBM [-1, 1] -> [0, 1]
         float rawH = fbm(samplePos);
@@ -178,12 +176,7 @@ export const ContourFieldBackground: React.FC<ContourFieldBackgroundProps> = ({
     const resizeObserver = new ResizeObserver(updateSize);
     resizeObserver.observe(container);
 
-    // Scroll handler for parallax
-    const handleScroll = () => {
-      uniforms.u_scroll.value = window.scrollY || window.pageYOffset;
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
+
 
     // IntersectionObserver to pause when off-screen
     const intersectionObserver = new IntersectionObserver(
@@ -220,7 +213,6 @@ export const ContourFieldBackground: React.FC<ContourFieldBackgroundProps> = ({
 
     return () => {
       cancelAnimationFrame(animationFrameId);
-      window.removeEventListener('scroll', handleScroll);
       resizeObserver.disconnect();
       intersectionObserver.disconnect();
 

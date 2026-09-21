@@ -79,7 +79,7 @@
 }
 
 /* All landing content must be above the after pseudo-element */
-.mg-landing-page > * {
+.mg-landing-page > *:not(.mg-contour-field) {
   position: relative;
   z-index: 1;
 }

@@ -16,7 +16,7 @@ echo.
 
 :: Start Backend in a new window
 echo  [1/2] Starting Backend (FastAPI on port 8000)...
-start "MINEGUARD Backend" cmd /k "cd /d "%~dp0" && uvicorn backend.app.main:app --reload --host 0.0.0.0 --port 8000"
+start "MINEGUARD Backend" cmd /k "cd /d "%~dp0" && if exist .venv\Scripts\activate.bat (call .venv\Scripts\activate.bat) && uvicorn backend.app.main:app --reload --host 0.0.0.0 --port 8000"
 
 :: Wait 3 seconds for backend to initialize
 timeout /t 3 /nobreak > nul
